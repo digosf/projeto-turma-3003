@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class SceneManager 
 {
@@ -30,14 +31,14 @@ public class SceneManager
 				{
 					case 0:
 					{
-						scene = new Game1();
+						//scene = new Game1();
 						currentScene = SCENE.GAME1_SPACE;
 						
 						break;
 					}
 					case 1:
 					{
-						scene = new Game2();
+						//scene = new Game2();
 						currentScene = SCENE.GAME2_GRADIUS;
 						break;
 					}
@@ -147,7 +148,7 @@ public class SceneManager
 		scene.update();	
 	}
 	
-	public static void draw(Graphics g)
+	public static void draw(Graphics2D g)
 	{
 		scene.draw(g);	
 	}	

@@ -28,6 +28,8 @@ public class Game extends Applet implements Runnable
 		this.g2d = backbuffer.createGraphics();
 		
 		setFocusable(true);
+		
+		SceneManager.setup();
 
 		//run();
 	}

@@ -13,15 +13,14 @@ public class Logo extends Scene
 
 		public Logo ()
 		{
-			background = new Background(0, 0, 800, 600, "images/Logo",null);
-			background.load( "/images/Logo.png");
+			background = new Background(0, 0, 800, 600, "/images/Logo.jpg",null);
 		}
 
 		@Override
 		public void update() {
 			// TODO Auto-generated method stub
 						if (i++ > max)
-				SceneManager.changeScene(0);
+				//SceneManager.changeScene(0);
 		}
 
 		@Override

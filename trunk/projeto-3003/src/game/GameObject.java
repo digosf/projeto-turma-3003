@@ -3,6 +3,7 @@ package game;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.net.URL;
 
 public abstract class GameObject
 {
@@ -18,7 +19,24 @@ public abstract class GameObject
 		this.w = w;
 		this.h = h;	
 		this.sound = sound;
-		this.image = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource(image));
+		Load(image);
+	}
+	protected URL getURL(String filename)
+	{
+		URL url = null;
+		try
+		{
+			url = this.getClass().getResource(filename);
+		
+		}
+		catch(Exception e){}
+		return url;
+	}
+	
+	public void Load(String filename)
+	{
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		image = tk.getImage(getURL(filename));
 	}
 	
 	public void Update()
