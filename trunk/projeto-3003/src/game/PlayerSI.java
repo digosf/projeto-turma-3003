@@ -1,15 +1,16 @@
 package game;
 
 import java.awt.event.KeyEvent;
+import java.awt.geom.Point2D;
 
 public class PlayerSI extends GameObject
 {
 	int speed;
 	
 	// Construtor
-	public PlayerSI(Point2D position, Point2D size)
+	public PlayerSI(Point2D position, Point2D size, String img)
 	{
-		super(position, size);	
+		super((int)position.getX(), (int)position.getY(), (int)size.getX(), (int)size.getY(), img, null);	
 	}
 	
 	public void SpeedValue(int speedValue)
