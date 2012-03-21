@@ -1,0 +1,313 @@
+!SESSION 2012-03-21 13:15:31.494 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_31
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.tigris.subversion.subclipse.core 4 -6 2012-03-21 13:16:11.195
+!MESSAGE org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:495)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:467)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:460)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:62)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.basicGetStatus(StatusCacheManager.java:217)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:188)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:136)
+	at org.tigris.subversion.subclipse.core.resources.LocalResource.getStatus(LocalResource.java:208)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.processResources(RevertResourceManager.java:141)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.resourceChanged(RevertResourceManager.java:112)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:139)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:481)
+	... 18 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 -6 2012-03-21 13:16:50.993
+!MESSAGE org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:495)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:467)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:460)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:62)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.basicGetStatus(StatusCacheManager.java:217)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:188)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:136)
+	at org.tigris.subversion.subclipse.core.resources.LocalResource.getStatus(LocalResource.java:208)
+	at org.tigris.subversion.subclipse.core.resources.LocalFolder.getStatus(LocalFolder.java:288)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.processResources(RevertResourceManager.java:151)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.resourceChanged(RevertResourceManager.java:112)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:139)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:481)
+	... 18 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 -6 2012-03-21 13:17:00.580
+!MESSAGE org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:495)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:467)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:460)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:62)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.basicGetStatus(StatusCacheManager.java:217)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:188)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:136)
+	at org.tigris.subversion.subclipse.core.resources.LocalResource.getStatus(LocalResource.java:208)
+	at org.tigris.subversion.subclipse.core.resources.LocalFolder.getStatus(LocalFolder.java:288)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.processResources(RevertResourceManager.java:151)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.resourceChanged(RevertResourceManager.java:112)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:139)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:481)
+	... 18 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 -6 2012-03-21 13:17:09.578
+!MESSAGE org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:495)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:467)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:460)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:62)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.basicGetStatus(StatusCacheManager.java:217)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:188)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:136)
+	at org.tigris.subversion.subclipse.core.resources.LocalResource.getStatus(LocalResource.java:208)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.processResources(RevertResourceManager.java:141)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.resourceChanged(RevertResourceManager.java:112)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:139)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:481)
+	... 18 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 -6 2012-03-21 13:17:21.624
+!MESSAGE org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:495)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:467)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:460)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:62)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.basicGetStatus(StatusCacheManager.java:217)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:188)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:136)
+	at org.tigris.subversion.subclipse.core.resources.LocalResource.getStatus(LocalResource.java:208)
+	at org.tigris.subversion.subclipse.core.resources.LocalFolder.getStatus(LocalFolder.java:288)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.processResources(RevertResourceManager.java:151)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.resourceChanged(RevertResourceManager.java:112)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:139)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:481)
+	... 19 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 -6 2012-03-21 13:17:57.476
+!MESSAGE org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:495)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:467)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:460)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:62)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.basicGetStatus(StatusCacheManager.java:217)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:188)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:136)
+	at org.tigris.subversion.subclipse.core.resources.LocalResource.getStatus(LocalResource.java:208)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.processResources(RevertResourceManager.java:141)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.resourceChanged(RevertResourceManager.java:112)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:139)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:481)
+	... 20 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 -6 2012-03-21 13:18:20.972
+!MESSAGE org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:495)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:467)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:460)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:62)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.RecursiveStatusUpdateStrategy.statusesToUpdate(RecursiveStatusUpdateStrategy.java:46)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.basicGetStatus(StatusCacheManager.java:217)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:188)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.getStatus(StatusCacheManager.java:136)
+	at org.tigris.subversion.subclipse.core.resources.LocalResource.getStatus(LocalResource.java:208)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.processResources(RevertResourceManager.java:141)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.RevertResourceManager.resourceChanged(RevertResourceManager.java:112)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:139)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: Unsupported working copy format
+svn: This client is too old to work with working copy 'C:\Users\vitor\Desktop\projeto-turma-3003'.  You need
+to get a newer Subversion client, or to downgrade this working copy.
+See http://subversion.tigris.org/faq.html#working-copy-format-change
+for details.
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:481)
+	... 20 more
