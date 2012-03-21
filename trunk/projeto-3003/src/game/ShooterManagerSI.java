@@ -1,15 +1,11 @@
 package game;
-
-
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.LinkedList;
-
-
 
 public class ShooterManagerSI
 
 {
-	
 	LinkedList<Shot> shotSI;
 	boolean collision;
 	EnemyShotSI enemyShot;
@@ -18,14 +14,11 @@ public class ShooterManagerSI
 	
 	public ShooterManagerSI()
 	{
-		
-		shotSI = new LinkedList<Shot>();
-		
+		shotSI = new LinkedList<Shot>();	
 	}
 	
 	public void Update()
 	{
-		
 		time++;
 		if(time > timeReaming)
 		{
@@ -47,7 +40,7 @@ public class ShooterManagerSI
 		}
 	}
 		
-		public void Draw(Graphics graphic)
+		public void Draw(Graphics2D graphic)
 		{
 			
 			for(Shot shot: shotSI)
