@@ -20,7 +20,7 @@ public class Logo extends Scene
 		public void update() {
 			// TODO Auto-generated method stub
 						if (i++ > max)
-				//SceneManager.changeScene(0);
+				SceneManager.changeScene(0);
 		}
 
 		@Override

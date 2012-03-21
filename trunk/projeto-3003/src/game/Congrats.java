@@ -12,9 +12,7 @@ class Congrats extends Scene
 
 	public Congrats()
 	{
-		background = new Background(new Point2D.Double(0, 0),
-									new Point2D.Double(800, 600));
-		background.load( "/images/bgCongrats.png" );
+		background = new Background(0,0,800,600,"/images/bgCongrats.png", null);
 	}
 
 	public void update()
@@ -25,7 +23,7 @@ class Congrats extends Scene
 
 	public void draw(Graphics2D g2d)
 	{
-		background.draw(g2d);
+		background.Draw(g2d);
 
 		g2d.drawString("Congratulations: " + i, 10, 10);
 	}

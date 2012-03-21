@@ -75,6 +75,6 @@ public class Game extends Applet implements Runnable
 	public void paint(Graphics g)
 	{		
 		g.drawImage(backbuffer, 0, 0, this);
-		SceneManager.draw(g2d);
+		SceneManager.scene.draw(g2d);
 	}
 }

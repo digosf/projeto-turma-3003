@@ -1,6 +1,6 @@
 package game;
 
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
@@ -44,7 +44,7 @@ public abstract class GameObject
 		
 	}
 
-	public void Draw(Graphics graphic)
+	public void Draw(Graphics2D graphic)
 	{
 		graphic.drawImage(this.image, (int)x, (int)y, w, h, null);
 	}
