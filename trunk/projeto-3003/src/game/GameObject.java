@@ -7,8 +7,8 @@ import java.awt.Toolkit;
 public abstract class GameObject
 {
 	protected Image image;
-	protected float x, y;
-	protected int w, h;
+	public float x, y;
+	public int w, h;
 	SoundClip sound;
 
 	public GameObject(float x, float y, int w, int h, String image, SoundClip sound)

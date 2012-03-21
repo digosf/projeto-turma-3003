@@ -6,19 +6,11 @@ import java.util.LinkedList;
 
 public class FriendlyShotManagerGR {
 	
-	private static FriendlyShotManagerGR instance = null;
+	public LinkedList<ShootFriendGR> ShootFriendList = new LinkedList<ShootFriendGR>();
 	
-	public LinkedList<ShootFriendGR> ShootFriendList;
-	
-	public FriendlyShotManagerGR get()
+	public FriendlyShotManagerGR()
 	{
-		if(instance == null){return new FriendlyShotManagerGR();}else{return instance;}
-		
-		ShootFriendList = new LinkedList<ShootFriendGR>();
-		
-		Shoot = new ShootFriendGR();
-		
-		
+				
 		
 	}
 	
@@ -28,7 +20,7 @@ public class FriendlyShotManagerGR {
 		{
 			for(int i = 0; i > ShootFriendList.size(); i++)
 			{
-				ShootFriendList.Update();
+				ShootFriendList.get(i).Update();
 			}
 		}
 		
@@ -45,7 +37,7 @@ public class FriendlyShotManagerGR {
 		{
 			for(int i = 0; i > ShootFriendList.size(); i++)
 			{
-				ShootFriendList.draw(graphic);
+				ShootFriendList.get(i).Draw(graphic);
 			}		
 		}
 				
@@ -53,8 +45,9 @@ public class FriendlyShotManagerGR {
 	
 	public void Fire()
 	{
-		Shoot = new ShootFriend();
-		ShootFriendList.add(Shoot);
+		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y,
+				20,10,"tiro_player.png",null);
+		ShootFriendList.add(shoot);
 		
 	
 	}
