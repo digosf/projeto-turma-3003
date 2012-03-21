@@ -1,6 +1,6 @@
 package game;
 
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -43,13 +43,13 @@ public class EnemyManagerGR
 		}
 	}
 	
-	public void  Draw(Graphics graphic)
+	public void  Draw(Graphics2D g2d)
 	{
 		if (listEnemy.size() > 0)
 		{
 			for(int i = 0; i < listEnemy.size();i++)
 			{
-				listEnemy.get(i).Draw(graphic);
+				listEnemy.get(i).Draw(g2d);
 			}
 		}
 	}

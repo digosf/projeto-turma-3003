@@ -1,6 +1,6 @@
 package game;
 
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -38,11 +38,11 @@ public class PlataformMananger
 		}
 	}
 	
-	public void Draw(Graphics g) 
+	public void Draw(Graphics2D g2d) 
 	{
 		for(int i = 0; i < objetos.size(); i++)
 		{
-			((Plataform)objetos.get(i)).Draw(g);
+			((Plataform)objetos.get(i)).Draw(g2d);
 		}
 	}
 	

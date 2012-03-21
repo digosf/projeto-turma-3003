@@ -1,7 +1,6 @@
 package game;
 
 import java.awt.Graphics2D;
-import java.awt.geom.Point2D;
 import java.util.LinkedList;
 
 public class EnemyManagerSI {
@@ -22,7 +21,7 @@ public class EnemyManagerSI {
 	{
 		this.speedX = 1;
 		this.speedY = 20;
-		this.sound = sound;
+		EnemyManagerSI.sound = sound;
 	}
 
     public void update()
@@ -78,6 +77,8 @@ public class EnemyManagerSI {
 											(y * (sizeHeight + 5)),
 											sizeWidth, 
 											sizeHeight,
+											"/images/Flor.png",
+											sound));
 											"/images/inimigos_1.png",
 											sound));
 			}

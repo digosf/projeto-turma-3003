@@ -60,21 +60,21 @@ public class Game extends Applet implements Runnable
 				e.printStackTrace();
 			}	
 			
-			//Time.Update();	
-						
+			update(g2d);
 			repaint();
+			paint(g2d);
 		}
 	}
 
-	public void update(Graphics g)
+	public void update(Graphics2D g2d)
 	{	
 		SceneManager.update();
-		paint(g);
+		paint(g2d);
 	}
 
-	public void paint(Graphics g)
+	public void paint(Graphics2D g2d)
 	{		
-		g.drawImage(backbuffer, 0, 0, this);
+		g2d.drawImage(backbuffer, 0, 0, this);
 		SceneManager.scene.draw(g2d);
 	}
 }

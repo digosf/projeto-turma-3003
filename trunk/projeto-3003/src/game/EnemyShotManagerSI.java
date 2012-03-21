@@ -1,6 +1,5 @@
 package game;
-import java.awt.Graphics;
-import java.awt.geom.Point2D;
+import java.awt.Graphics2D;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -40,13 +39,14 @@ public class EnemyShotManagerSI {
 		}
 	}
 	
-	public void draw(Graphics graphic)
+	public void draw(Graphics2D g2d)
 	{
 		if(shotList.size() > 0)
 		{
 			for(int i = 0; i < shotList.size(); i++)
 			{
 				shotList.get(i).Draw(graphic);
+				shotList.get(i).Draw(g2d);
 			}
 		}
 	}
@@ -55,6 +55,7 @@ public class EnemyShotManagerSI {
 	{
 	
 		EnemySI enemy = EnemyManagerSI.listEnemy.get(rand.nextInt(EnemyManagerSI.listEnemy.size()));
+		shotList.add(new EnemyShotSI(enemy.x, enemy.y, enemy.w, enemy.h, "IMAGEM", null));
 		shotList.add(new EnemyShotSI(enemy.x, enemy.y, enemy.w, enemy.h, "/images/tiro_inimigo.png", shootclip));
 	}
 	

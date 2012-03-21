@@ -1,5 +1,4 @@
 package game;
-import java.awt.Graphics;
 
 public class EnemySI extends GameObject
 {

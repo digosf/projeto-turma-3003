@@ -1,6 +1,6 @@
 package game;
 
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -42,11 +42,11 @@ public class EnemyShootManagerGR
 			shoot.Update();
 		}
 	}
-	public void Draw(Graphics graphic)
+	public void Draw(Graphics2D g2d)
 	{
 		for(EnemyShootGR shoot: shootEnemyList)
 		{
-			shoot.Draw(graphic);
+			shoot.Draw(g2d);
 		}
 	}
 }

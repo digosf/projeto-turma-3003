@@ -12,8 +12,8 @@ public class SceneManager
 	
 	public static void setup()
 	{	
-		scene = new Logo();
-		currentScene = SCENE.LOGO;
+		scene = new Game3();
+		currentScene = SCENE.GAME3_IF;
 	}
 	
 	public static void changeScene(int openingScene)
@@ -21,8 +21,8 @@ public class SceneManager
 		switch (currentScene)
 		{
 			case LOGO:
-				scene = new Opening();
-				currentScene = SCENE.OPENING; 
+				scene = new Game3();
+				currentScene = SCENE.GAME3_IF; 
 				break;
 				
 			case OPENING:
@@ -148,8 +148,9 @@ public class SceneManager
 	}
 	
 	public static void draw(Graphics2D g)
+	public static void draw(Graphics2D g2d)
 	{
-		scene.draw(g);	
+		scene.draw(g2d);	
 	}	
 
 	enum SCENE

@@ -1,61 +1,52 @@
 package game;
 
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
 
-public class FriendlyShotManager {
-	
+public class FriendlyShotManager 
+{	
 	private static FriendlyShotManager instance = null;
 	
-	public LinkedList<ShootFriend> ShootFriendList;
+	public LinkedList<ShotFriend> ShotFriendList;
 	
-	public FriendlyShotManager get(){
-		if(instance == null){return new FriendlyShotManager();}else{return instance;}
+	public static FriendlyShotManager getInstance()
+	{
+		if(instance == null)
+		{
+			instance = new FriendlyShotManager();
+		}
 		
-		ShootFriendList = new LinkedList<ShootFriend>();
-		Shoot = new ShootFriend();
-		ShootFriendList.add(Shoot);
-		
+		return instance;
 	}
 	
-	public void Update()
+	public void Update(PlayerSI player)
 	{ 
-		if(ShootFriendList.size() > 0)
+		if(ShotFriendList.size() > 0)
 		{
-			for(int i = 0; i > ShootFriendList.size(); i++)
+			for(int i = 0; i > ShotFriendList.size(); i++)
 			{
-				ShootFriendList.update();
+				ShotFriendList.get(i).Update();
 			}
 		}
 		
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE))
 		{
-			Fire();			
+			ShotFriendList.add(new ShotFriend(player.x, player.y, 20, 10, null, 10));		
 		}
 	}
 	
-	public void Draw()
+	public void Draw(Graphics2D g2d)
 	{
 
-		if(ShootFriendList.size() > 0)
+		if(ShotFriendList.size() > 0)
 		{
-			for(int i = 0; i > ShootFriendList.size(); i++)
+			for(int i = 0; i > ShotFriendList.size(); i++)
 			{
-				ShootFriendList.draw();
+				ShotFriendList.get(i).Draw(g2d);
 			}		
 		}
 				
-	}
-	
-	public void Fire()
-	{
-		Shoot = new ShootFriend();
-		ShootFriendList.add(Shoot);
-		
-	
-	}
-	
-	
-	
+	}	
 }

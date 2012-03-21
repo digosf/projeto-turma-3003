@@ -1,7 +1,6 @@
 package game;
 
 import java.awt.Graphics2D;
-import java.awt.geom.Point2D;
 
 class Congrats extends Scene
 {
@@ -12,6 +11,8 @@ class Congrats extends Scene
 
 	public Congrats()
 	{
+		background = new Background(0, 0, 800, 600, "", null);
+		background.load( "/images/bgCongrats.png" );
 		background = new Background(0,0,800,600,"/images/bgCongrats.png", null);
 	}
 
