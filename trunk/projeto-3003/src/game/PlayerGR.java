@@ -24,7 +24,14 @@ public class PlayerGR extends GameObject
 	public void Update()
 	{
 		//Atirar
+<<<<<<< .mine
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ENTER)) { 
+			FriendlyShotManagerGR.Fire();
+			
+		}
+=======
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ENTER)) { FriendlyShotManager.Fire(); }
+>>>>>>> .r39
 		
 		//Movimentação horizontal.
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_RIGHT)) { this.x += this.speed; }
