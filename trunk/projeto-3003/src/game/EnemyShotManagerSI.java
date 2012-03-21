@@ -13,10 +13,12 @@ public class EnemyShotManagerSI {
 	float timer = 0;
 	float timerReaming = 70;
 	LinkedList<Shot> shotList = new LinkedList<Shot>();
+	SoundClip shootclip;
 	
 	public EnemyShotManagerSI()
 	{
-			
+		shootclip = new SoundClip();
+		shootclip.load("/sounds/shoot_SI.wav", true);
 	}
 	
 	public void update()
@@ -33,7 +35,7 @@ public class EnemyShotManagerSI {
 		{
 			for(int i = 0; i < shotList.size(); i++)
 			{
-				shotList.get(i).update();
+				shotList.get(i).Update();
 			}
 		}
 	}
@@ -44,15 +46,16 @@ public class EnemyShotManagerSI {
 		{
 			for(int i = 0; i < shotList.size(); i++)
 			{
-				shotList.get(i).draw(graphic);
+				shotList.get(i).Draw(graphic);
 			}
 		}
 	}
 	
 	public void AdicionarTiro()
 	{
+	
 		EnemySI enemy = EnemyManagerSI.listEnemy.get(rand.nextInt(EnemyManagerSI.listEnemy.size()));
-		shotList.add(new Shot(enemy.x, enemy.y, enemy.w, enemy.h, "IMAGEM", null));
+		shotList.add(new EnemyShotSI(enemy.x, enemy.y, enemy.w, enemy.h, "/images/tiro_inimigo.png", shootclip));
 	}
 	
 

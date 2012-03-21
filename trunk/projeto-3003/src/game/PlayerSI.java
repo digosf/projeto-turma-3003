@@ -6,7 +6,16 @@ import java.awt.geom.Point2D;
 public class PlayerSI extends GameObject
 {
 	int speed;
+	private static Point2D Position;
 	
+	public static Point2D getPosition() {
+		return Position;
+	}
+
+	public static void setPosition(Point2D position) {
+		Position = position;
+	}
+
 	// Construtor
 	public PlayerSI(Point2D position, Point2D size, String img)
 	{
@@ -22,7 +31,7 @@ public class PlayerSI extends GameObject
 	@Override
 	public void Update()
 	{
-		
+		Position = new Point2D.Float(super.x, super.y);
 		// Atualiza a funcao de movimentar o personagem
 		this.MoveCharacter();
 		

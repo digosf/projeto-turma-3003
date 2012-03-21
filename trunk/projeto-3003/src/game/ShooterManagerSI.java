@@ -1,16 +1,20 @@
 package game;
 
 
+import java.awt.Graphics;
 import java.util.LinkedList;
 
 
 
 public class ShooterManagerSI
+
 {
 	
 	LinkedList<Shot> shotSI;
 	boolean collision;
 	EnemyShotSI enemyShot;
+	int time;
+	int timeReaming;
 	
 	public ShooterManagerSI()
 	{
@@ -22,8 +26,12 @@ public class ShooterManagerSI
 	public void Update()
 	{
 		
-		
-		
+		time++;
+		if(time > timeReaming)
+		{
+			time = 0;
+			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX(), (float)PlayerSI.getPosition().getY(), 10,10, "tiro_player.png", null ));
+		}
 		for(int i = 0; i < shotSI.size(); i++)
 		{
 			shotSI.get(i).Update();
@@ -37,9 +45,17 @@ public class ShooterManagerSI
 				
 			}
 		}
-		
-		
 	}
+		
+		public void Draw(Graphics graphic)
+		{
+			
+			for(Shot shot: shotSI)
+				shot.Draw(graphic);
+			
+		}
+		
+	
 	
 	
 	

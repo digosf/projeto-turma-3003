@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class EnemyManagerSI {
 
-	static LinkedList<EnemySI> listEnemy = new LinkedList<EnemySI>();
+	public static LinkedList<EnemySI> listEnemy= new LinkedList<EnemySI>();
 
 	//Velocidade
 	private float speedX;
@@ -59,7 +59,7 @@ public class EnemyManagerSI {
 		//Draw Inimigo
         for(EnemySI enemy: listEnemy)
         {
-        	enemy.draw(g2d);
+        	enemy.Draw(g2d);
         }
     }
 	
@@ -78,8 +78,8 @@ public class EnemyManagerSI {
 											(y * (sizeHeight + 5)),
 											sizeWidth, 
 											sizeHeight,
-											"/images/Flor.png",
-											sound);
+											"/images/inimigos_1.png",
+											sound));
 			}
 		}
 	}
