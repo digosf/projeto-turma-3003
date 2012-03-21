@@ -1,4 +1,5 @@
 package game;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -18,6 +19,11 @@ public abstract class GameObject
 		this.h = h;	
 		this.sound = sound;
 		this.image = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource(image));
+	}
+	
+	public void Update()
+	{
+		
 	}
 
 	public void Draw(Graphics graphic)
