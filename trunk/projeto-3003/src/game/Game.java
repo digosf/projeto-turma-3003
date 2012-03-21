@@ -14,6 +14,7 @@ public class Game extends Applet implements Runnable
 	public static final int screenWidth  = 800;
 	public static final int screenHeigth = 600;
 	
+	
 	BufferedImage backbuffer;
 	Graphics2D g2d;
 
@@ -65,11 +66,13 @@ public class Game extends Applet implements Runnable
 
 	public void update(Graphics g)
 	{	
+		SceneManager.update();
 		paint(g);
 	}
 
 	public void paint(Graphics g)
 	{		
 		g.drawImage(backbuffer, 0, 0, this);
+		SceneManager.draw(g2d);
 	}
 }

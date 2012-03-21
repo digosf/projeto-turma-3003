@@ -6,7 +6,7 @@ public class SceneManager
 {
 	private SceneManager(){}
 	
-	private static Scene scene;
+	public static Scene scene;
 	private static SCENE currentScene;
 	
 	
