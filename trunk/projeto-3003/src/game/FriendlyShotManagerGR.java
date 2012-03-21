@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class FriendlyShotManagerGR {
 	
-	public LinkedList<ShootFriendGR> ShootFriendList = new LinkedList<ShootFriendGR>();
+	public static LinkedList<ShootFriendGR> ShootFriendList = new LinkedList<ShootFriendGR>();
 	
 	public FriendlyShotManagerGR()
 	{
@@ -24,10 +24,7 @@ public class FriendlyShotManagerGR {
 			}
 		}
 		
-		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE))
-		{
-			Fire();			
-		}
+		
 	}
 	
 	public void Draw(Graphics graphic)
@@ -43,7 +40,7 @@ public class FriendlyShotManagerGR {
 				
 	}
 	
-	public void Fire()
+	public static void Fire()
 	{
 		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y,
 				20,10,"tiro_player.png",null);
