@@ -24,7 +24,7 @@ public class PlayerGR extends GameObject
 	public void Update()
 	{
 		//Atirar
-		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ENTER))
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_A))
 		{ 
 			FriendlyShotManagerGR.Fire();			
 		}
@@ -37,14 +37,14 @@ public class PlayerGR extends GameObject
 		
 		//Movimentação vertical.
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_UP)) { this.y -= this.speed; }
-		else if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN)) { this.x += this.speed; }
+		else if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN)) { this.y += this.speed; }
 		
-		Limits();
+		//Limits();
 	}
 	
-	private void Limits()
+	/*private void Limits()
 	{
 		if(this.x > this.maxX) { this.x = this.maxX; } else if(this.x < this.minX) { this.x = this.minX; }
 		if(this.y > this.maxY) { this.y = this.maxY; } else if(this.x < this.minY) { this.x = this.minY; }
-	}
+	}*/
 }

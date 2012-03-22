@@ -14,9 +14,7 @@ public class PlayerIfante extends GameObject{
 		super(x, y, w, h, image, sound);
 	}
 	
-	
-
-
+	@Override
 	public void Update()
 	{
 		oldPosX = x;
@@ -37,8 +35,6 @@ public class PlayerIfante extends GameObject{
 			x = 800 - w;
 		if (y < 0 || y > 600 - h)
 			SceneManager.changeScene(1);
-			
         
 	}
-	
 }

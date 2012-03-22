@@ -17,11 +17,11 @@ public class Game1 extends Scene{
 		themeclip = new SoundClip();
 		themeclip.load("/sounds/theme_SI.wav", true);
 		
-		player = new PlayerSI(new Point2D.Float(2,2),new Point2D.Float(2,2),"/images/personagemSpaceInvader.png");
+		player = new PlayerSI(new Point2D.Float(400 - 40,550),new Point2D.Float(80,40),"/images/personagemSpaceInvader.png");
 		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", themeclip);
-		enemy = new EnemyManagerSI (null);
-		tiroInimigo = new EnemyShotManagerSI();
-		tiroAmigo = new ShooterManagerSI();
+		enemy = new EnemyManagerSI(null);
+		//tiroInimigo = new EnemyShotManagerSI();
+		//tiroAmigo = new ShooterManagerSI();
 	}
 
 	@Override
@@ -30,18 +30,18 @@ public class Game1 extends Scene{
 		enemy.update();
 		background.Update();
 		player.Update();
-		tiroInimigo.update();
-		tiroAmigo.Update();
+		//tiroInimigo.update();
+		//tiroAmigo.Update();
 		
 	}
 	@Override
 	public void draw(Graphics2D g2d) {
-		// TODO Auto-generated method stub
+		
+		//tiroInimigo.draw(g2d);
+		//tiroAmigo.Draw(g2d);
 		background.Draw(g2d);
-		enemy.draw(g2d);
 		player.Draw(g2d);
-		tiroInimigo.draw(g2d);
-		tiroAmigo.Draw(g2d);
+		enemy.draw(g2d);
 	}
 	
 }
