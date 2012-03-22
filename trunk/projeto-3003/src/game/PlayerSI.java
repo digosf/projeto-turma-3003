@@ -19,7 +19,8 @@ public class PlayerSI extends GameObject
 	// Construtor
 	public PlayerSI(Point2D position, Point2D size, String img)
 	{
-		super((int)position.getX(), (int)position.getY(), (int)size.getX(), (int)size.getY(), img, null);	
+		super((int)position.getX(), (int)position.getY(), (int)size.getX(), (int)size.getY(), img, null);
+		this.speed = 5;
 	}
 	
 	public void SpeedValue(int speedValue)
@@ -34,7 +35,6 @@ public class PlayerSI extends GameObject
 		Position = new Point2D.Float(super.x, super.y);
 		// Atualiza a funcao de movimentar o personagem
 		this.MoveCharacter();
-		
 		// Atualiza a funcao de limitar a movimentacao do personagem
 		this.FixedLimits();
 		
@@ -45,8 +45,8 @@ public class PlayerSI extends GameObject
 	{
 		if (this.x < 0)
 			this.x = 0;
-		else if (this.x + this.w > 600)
-			this.x = 600 - this.w;
+		else if (this.x + this.w > 800)
+			this.x = 800 - this.w;
 	}
 
 	private void MoveCharacter()

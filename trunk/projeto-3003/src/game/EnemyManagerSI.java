@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class EnemyManagerSI {
 
-	public static LinkedList<EnemySI> listEnemy= new LinkedList<EnemySI>();
+	public static LinkedList<EnemySI> listEnemy;
 
 	//Velocidade
 	private float speedX;
@@ -17,34 +17,54 @@ public class EnemyManagerSI {
 	
 	private static SoundClip sound;
 	
+	boolean collision;
+	
 	public EnemyManagerSI(SoundClip sound)
 	{
-		this.speedX = 1;
-		this.speedY = 20;
+		collision = true;
+		this.speedX = 4;
+		this.speedY = 5;
 		EnemyManagerSI.sound = sound;
+		//listEnemy = new LinkedList<EnemySI>();
+		NewEnemy(4, 4);
 	}
 
     public void update()
     {
-    	//variavel que resulta o teste de que o objeto tocou nas bordas
-    	boolean collision = false;
+    	float speedYTemp = 0;
     	
     	for(int i = 0; i < listEnemy.size(); i++)
     	{
     		//Teste da colisao com as bordas
-    		if(listEnemy.get(i).x <= 0 || listEnemy.get(i).x + listEnemy.get(i).w >= 800)
+    		/*if(listEnemy.get(i).x <= 40 || listEnemy.get(i).x + listEnemy.get(i).w >= 800)
     		{
-    			collision = true;
+    			//collision = false;
+    			if (collision)
+    				collision = false;
+    			else
+    				collision = true;
+    		}*/
+    		
+    		if (listEnemy.get(i).x <= 0)
+    		{
+    			this.speedX = 2;
+    			speedYTemp = this.speedY;
+    			
+    		}
+    		else if (listEnemy.get(i).x + listEnemy.get(i).w >= 800)
+    		{
+    			this.speedX = -2;
+    			speedYTemp = this.speedY;
     		}
     	}
     	
     	//Variavel resultante da velocidade Y que sera adicionada apenas quando o inimigo tocar na tela
-    	float speedYTemp = 0;
-    	if(collision)
+    	
+    	/*if(collision)
     	{
     		this.speedX *= -1;	//Inverte direcao X 
     		speedYTemp = this.speedY;
-    	}
+    	}*/
     	
     	//Update do inimigo
     	for(EnemySI enemy: listEnemy)
@@ -52,7 +72,7 @@ public class EnemyManagerSI {
 			enemy.MoveEnemy(this.speedX, speedYTemp);
     	}
     }
-
+    
 	public void draw(Graphics2D g2d)
     {
 		//Draw Inimigo

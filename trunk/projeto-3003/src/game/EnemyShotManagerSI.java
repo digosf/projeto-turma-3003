@@ -55,8 +55,8 @@ public class EnemyShotManagerSI {
 	{
 	
 		EnemySI enemy = EnemyManagerSI.listEnemy.get(rand.nextInt(EnemyManagerSI.listEnemy.size()));
-		shotList.add(new EnemyShotSI(enemy.x, enemy.y, enemy.w, enemy.h, "IMAGEM", null));
-		shotList.add(new EnemyShotSI(enemy.x, enemy.y, enemy.w, enemy.h, "/images/tiro_inimigo.png", shootclip));
+		//shotList.add(new EnemyShotSI(enemy.x, enemy.y, enemy.w, enemy.h, "IMAGEM", null));
+		shotList.add(new EnemyShotSI(enemy.x, enemy.y, 10, 10, "/images/tiro_inimigo.png", shootclip));
 	}
 	
 
