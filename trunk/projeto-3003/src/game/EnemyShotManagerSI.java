@@ -45,7 +45,7 @@ public class EnemyShotManagerSI {
 		{
 			for(int i = 0; i < shotList.size(); i++)
 			{
-				shotList.get(i).Draw(graphic);
+				shotList.get(i).Draw(g2d);
 				shotList.get(i).Draw(g2d);
 			}
 		}

@@ -1,6 +1,4 @@
-    package game;
-    import java.awt.Graphics2D;
-import java.awt.geom.Point2D;
+package game;
 
 public class Background extends GameObject{
 			

@@ -27,6 +27,7 @@ public class Game extends Applet implements Runnable
 
 		this.g2d = backbuffer.createGraphics();
 		
+		addKeyListener(Keyboard.getInstance());
 		setFocusable(true);
 		
 		SceneManager.setup();
@@ -60,21 +61,22 @@ public class Game extends Applet implements Runnable
 				e.printStackTrace();
 			}	
 			
-			update(g2d);
+			//update(g2d);
 			repaint();
-			paint(g2d);
 		}
 	}
 
-	public void update(Graphics2D g2d)
+	public void update(Graphics g)
 	{	
 		SceneManager.update();
-		paint(g2d);
+		
+		paint(g);
 	}
 
-	public void paint(Graphics2D g2d)
-	{		
-		g2d.drawImage(backbuffer, 0, 0, this);
+	public void paint(Graphics g)
+	{
 		SceneManager.scene.draw(g2d);
+		
+		g.drawImage(backbuffer, 0, 0, this);
 	}
 }

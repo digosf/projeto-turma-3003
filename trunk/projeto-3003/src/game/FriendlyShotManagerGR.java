@@ -1,8 +1,6 @@
 package game;
 
 import java.awt.Graphics2D;
-import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
 public class FriendlyShotManagerGR {
@@ -15,7 +13,7 @@ public class FriendlyShotManagerGR {
 		
 	}
 	
-	public void Update()
+	public static void Update()
 	{ 
 		if(ShootFriendList.size() > 0)
 		{
@@ -28,7 +26,7 @@ public class FriendlyShotManagerGR {
 		
 	}
 	
-	public void Draw(Graphics2D g2d)
+	public static void Draw(Graphics2D g2d)
 	{
 
 		if(ShootFriendList.size() > 0)

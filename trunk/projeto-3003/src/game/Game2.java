@@ -1,7 +1,6 @@
 package game;
 
 import java.awt.Graphics2D;
-import java.awt.Graphics2D;
 
 public class Game2 extends Scene {
 
@@ -24,13 +23,16 @@ public class Game2 extends Scene {
 	public void update() {
 		// TODO Auto-generated method stub
 		player.Update();
+		FriendlyShotManagerGR.Update();
 		enemyManagerGR.Update();
 	}
 	
 	public void Draw(Graphics2D g2d)
 	{
+		FriendlyShotManagerGR.Draw(g2d);
 		player.Draw(g2d);
 		enemyManagerGR.Draw(g2d);
+	}
 
 	@Override
 	public void draw(Graphics2D g2d) {

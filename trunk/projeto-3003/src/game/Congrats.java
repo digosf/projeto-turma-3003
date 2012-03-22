@@ -12,7 +12,7 @@ class Congrats extends Scene
 	public Congrats()
 	{
 		background = new Background(0, 0, 800, 600, "", null);
-		background.load( "/images/bgCongrats.png" );
+		background.Load( "/images/bgCongrats.png" );
 		background = new Background(0,0,800,600,"/images/bgCongrats.png", null);
 	}
 

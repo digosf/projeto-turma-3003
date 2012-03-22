@@ -77,8 +77,6 @@ public class EnemyManagerSI {
 											(y * (sizeHeight + 5)),
 											sizeWidth, 
 											sizeHeight,
-											"/images/Flor.png",
-											sound));
 											"/images/inimigos_1.png",
 											sound));
 			}

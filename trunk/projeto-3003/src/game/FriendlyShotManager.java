@@ -1,7 +1,6 @@
 package game;
 
 import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
 
@@ -9,7 +8,7 @@ public class FriendlyShotManager
 {	
 	private static FriendlyShotManager instance = null;
 	
-	public LinkedList<ShotFriend> ShotFriendList;
+	public static LinkedList<ShotFriend> ShotFriendList;
 	
 	public static FriendlyShotManager getInstance()
 	{
@@ -21,7 +20,7 @@ public class FriendlyShotManager
 		return instance;
 	}
 	
-	public void Update(PlayerSI player)
+	public static void Update()
 	{ 
 		if(ShotFriendList.size() > 0)
 		{
@@ -30,14 +29,9 @@ public class FriendlyShotManager
 				ShotFriendList.get(i).Update();
 			}
 		}
-		
-		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE))
-		{
-			ShotFriendList.add(new ShotFriend(player.x, player.y, 20, 10, null, 10));		
-		}
 	}
 	
-	public void Draw(Graphics2D g2d)
+	public static void Draw(Graphics2D g2d)
 	{
 
 		if(ShotFriendList.size() > 0)
@@ -46,7 +40,11 @@ public class FriendlyShotManager
 			{
 				ShotFriendList.get(i).Draw(g2d);
 			}		
-		}
-				
-	}	
+		}				
+	}
+	
+	public static void Fire(PlayerGR player)
+	{
+		ShotFriendList.add(new ShotFriend(player.x, player.y, 20, 10, null, 10));
+	}
 }
