@@ -22,7 +22,7 @@ public class Collision {
     
     //Colisão mais precisa que além do lado necessita da velocidade do segundo corpo 
 	//e a posição antiga do primeiro.
-    public static boolean CheckCollision(GameObject go1, GameObject go2, float oldPosX, float oldPosY, String side, float object2Speed)
+    /*public static boolean CheckCollision(GameObject go1, GameObject go2, float oldPosX, float oldPosY, String side, float object2Speed)
     {
         UpdateRect(go1, go2);
         if(side == "left")
@@ -34,7 +34,7 @@ public class Collision {
         if(side == "bottom")
         	result = (r1.intersects(r2) && r1.y + (oldPosY - go1.y) + object2Speed >= (r2.y + r2.height));
         return result;
-    }
+    }*/
     
     //Atualiza os valores dos retângulos.
     private static void UpdateRect(GameObject go1, GameObject go2)

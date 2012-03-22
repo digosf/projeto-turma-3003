@@ -6,9 +6,9 @@ import java.awt.geom.Point2D;
 public class Game1 extends Scene{
 	
 	Background background;
-	PlayerSI player;
-	EnemyManagerSI enemy;
-	EnemyShotManagerSI tiroInimigo;
+	static PlayerSI player;
+	static EnemyManagerSI enemy;
+	static EnemyShotManagerSI tiroInimigo;
 	ShooterManagerSI tiroAmigo;	
 	SoundClip themeclip;
 	
@@ -21,9 +21,9 @@ public class Game1 extends Scene{
 		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", themeclip);
 		enemy = new EnemyManagerSI(null);
 		tiroInimigo = new EnemyShotManagerSI();
-		//tiroAmigo = new ShooterManagerSI();
+		tiroAmigo = new ShooterManagerSI();
 	}
-
+	
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
@@ -31,17 +31,16 @@ public class Game1 extends Scene{
 		background.Update();
 		player.Update();
 		tiroInimigo.update();
-		//tiroAmigo.Update();
+		tiroAmigo.Update();
 		
 	}
 	@Override
 	public void draw(Graphics2D g2d) {
 		
-		//tiroAmigo.Draw(g2d);
 		background.Draw(g2d);
 		player.Draw(g2d);
 		enemy.draw(g2d);
 		tiroInimigo.draw(g2d);
+		tiroAmigo.Draw(g2d);
 	}
-	
 }

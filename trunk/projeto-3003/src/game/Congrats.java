@@ -11,9 +11,9 @@ class Congrats extends Scene
 
 	public Congrats()
 	{
-		background = new Background(0, 0, 800, 600, "", null);
-		background.Load( "/images/bgCongrats.png" );
-		background = new Background(0,0,800,600,"/images/bgCongrats.png", null);
+		//background = new Background(0, 0, 800, 600, "", null);
+		//background.Load( "/imagescongratulations.png" );
+		background = new Background(0,0,800,600,"/images/congratulations.png", null);
 	}
 
 	public void update()

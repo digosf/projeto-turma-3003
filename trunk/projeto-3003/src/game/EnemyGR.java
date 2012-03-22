@@ -1,12 +1,15 @@
 package game;
 
+import java.util.Random;
+import java.util.RandomAccess;
+
 public class EnemyGR extends GameObject
 {
 	boolean subindo = false;
 	
-	float speed = 5;
+	float speed = 3;
 	
-	float speedMoviment = 8;
+	float speedMoviment = 5;
 
 	public EnemyGR(float x, float y, int w, int h, String image, SoundClip sound) 
 	{

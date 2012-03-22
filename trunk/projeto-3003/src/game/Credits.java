@@ -14,13 +14,13 @@ public class Credits extends Scene
 
 	public Credits()
 	{
-		background = new Background(0,0,800,2000, "Creditos", null);
+		background = new Background(0,0,800,2000, "/images/Creditos.png", null);
 	}
 	
 	//@Overrride
 	public void update()
 	{
-		background.y--;
+		background.y-= 0.3f;
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ESCAPE) || background.y < -600)
 		{
 			SceneManager.changeScene(0);

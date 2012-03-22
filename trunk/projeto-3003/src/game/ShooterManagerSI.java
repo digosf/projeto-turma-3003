@@ -13,7 +13,8 @@ public class ShooterManagerSI
 	
 	public ShooterManagerSI()
 	{
-		shotSI = new LinkedList<Shot>();	
+		shotSI = new LinkedList<Shot>();
+		timeReaming = 20;
 	}
 	
 	public void Update()
@@ -22,33 +23,39 @@ public class ShooterManagerSI
 		if(time > timeReaming)
 		{
 			time = 0;
-			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX(), (float)PlayerSI.getPosition().getY(), 10,10, "tiro_player.png", null ));
+			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX(), (float)PlayerSI.getPosition().getY(), 10,10, "/images/tiro_inimigo.png", null ));
 		}
-		for(int i = 0; i < shotSI.size(); i++)
+		
+		/*for(int i = 0; i < shotSI.size(); i++)
 		{
 			shotSI.get(i).Update();
 			
-			
-			
 			if(Collision.CheckCollision(shotSI.get(i), enemyShot) == true)
 			{
-				//i--;
-				shotSI.remove(i);//remover o item da lista
-				
+				shotSI.remove(i);//remover o item da lista	
+			}
+		}*/
+		for (Shot s : shotSI)
+		{
+			s.Update();
+			
+			for (EnemySI e : Game1.enemy.listEnemy)
+			{
+				if (Collision.CheckCollision(s, e))
+				{
+					Game1.enemy.listEnemy.remove(e);
+					shotSI.remove(s);
+				}
 			}
 		}
 	}
 		
-		public void Draw(Graphics2D graphic)
-		{
-			
-			for(Shot shot: shotSI)
-				shot.Draw(graphic);
-			
-		}
+	public void Draw(Graphics2D graphic)
+	{
 		
-	
-	
-	
-	
+		for(Shot shot: shotSI)
+		{
+			shot.Draw(graphic);
+		}
+	}
 }

@@ -7,6 +7,7 @@ public class PlayerSI extends GameObject
 {
 	int speed;
 	private static Point2D Position;
+	public int life; 
 	
 	public static Point2D getPosition() {
 		return Position;
@@ -21,6 +22,7 @@ public class PlayerSI extends GameObject
 	{
 		super((int)position.getX(), (int)position.getY(), (int)size.getX(), (int)size.getY(), img, null);
 		this.speed = 5;
+		life = 15;
 	}
 	
 	public void SpeedValue(int speedValue)
@@ -32,6 +34,11 @@ public class PlayerSI extends GameObject
 	@Override
 	public void Update()
 	{
+		if (life <= 0)
+		{
+			SceneManager.changeScene(1);
+		}
+		
 		Position = new Point2D.Float(super.x, super.y);
 		// Atualiza a funcao de movimentar o personagem
 		this.MoveCharacter();

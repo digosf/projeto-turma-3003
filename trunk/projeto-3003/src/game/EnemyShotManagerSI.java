@@ -3,7 +3,6 @@ import java.awt.Graphics2D;
 import java.util.LinkedList;
 import java.util.Random;
 
-
 public class EnemyShotManagerSI {
 	
 	float shotPosiY;
@@ -27,7 +26,17 @@ public class EnemyShotManagerSI {
 		{
 			timer = 0;
 			AdicionarTiro();
+		}
+		
+		for (Shot s : shotList)
+		{
+			s.Update();
 			
+			if (Collision.CheckCollision(s, Game1.player))
+			{
+				shotList.remove(s);
+				Game1.player.life -= 1;
+			}
 		}
 		
 		if(shotList.size() > 0)
@@ -53,12 +62,8 @@ public class EnemyShotManagerSI {
 	
 	public void AdicionarTiro()
 	{
-	
 		EnemySI enemy = EnemyManagerSI.listEnemy.get(rand.nextInt(EnemyManagerSI.listEnemy.size()));
 		//shotList.add(new EnemyShotSI(enemy.x, enemy.y, enemy.w, enemy.h, "IMAGEM", null));
 		shotList.add(new EnemyShotSI(enemy.x, enemy.y, 10, 10, "/images/tiro_inimigo.png", shootclip));
 	}
-	
-
-
 }

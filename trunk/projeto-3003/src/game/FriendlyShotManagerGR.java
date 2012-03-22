@@ -9,45 +9,38 @@ public class FriendlyShotManagerGR {
 	
 	public FriendlyShotManagerGR()
 	{
-				
-		
 	}
 	
 	public static void Update()
 	{ 
-		if(ShootFriendList.size() > 0)
+		for (ShootFriendGR s : ShootFriendList)
 		{
-			for(int i = 0; i > ShootFriendList.size(); i++)
+			s.Update();
+			
+			// Checando colisao do tiro do player com as naves inimigas
+			for (EnemyGR e : Game2.enemyManagerGR.listEnemy)
 			{
-				ShootFriendList.get(i).Update();
+				if (Collision.CheckCollision(s, e))
+				{
+					ShootFriendList.remove(s);
+					Game2.enemyManagerGR.listEnemy.remove(e);
+				}
 			}
 		}
-		
-		
 	}
 	
 	public static void Draw(Graphics2D g2d)
 	{
-
-		if(ShootFriendList.size() > 0)
+		for (ShootFriendGR s : ShootFriendList)
 		{
-			for(int i = 0; i > ShootFriendList.size(); i++)
-			{
-				ShootFriendList.get(i).Draw(g2d);
-			}		
+			s.Draw(g2d);
 		}
-				
 	}
 	
 	public static void Fire()
 	{
 		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y,
-				20,10,"tiro_player.png",null);
+				20,10,"/images/tiro_player.png",null);
 		ShootFriendList.add(shoot);
-		
-	
 	}
-	
-	
-	
 }

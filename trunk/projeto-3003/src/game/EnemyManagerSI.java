@@ -26,7 +26,7 @@ public class EnemyManagerSI {
 		this.speedY = 5;
 		EnemyManagerSI.sound = sound;
 		//listEnemy = new LinkedList<EnemySI>();
-		NewEnemy(4, 4);
+		NewEnemy(8, 4);
 	}
 
     public void update()
@@ -70,6 +70,11 @@ public class EnemyManagerSI {
     	for(EnemySI enemy: listEnemy)
     	{
 			enemy.MoveEnemy(this.speedX, speedYTemp);
+    	}
+    	
+    	if (listEnemy.isEmpty())
+    	{
+			SceneManager.changeScene(0);
     	}
     }
     

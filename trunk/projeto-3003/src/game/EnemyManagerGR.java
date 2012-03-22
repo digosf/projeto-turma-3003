@@ -25,20 +25,29 @@ public class EnemyManagerGR
 	{
 		timer++;
 		
-		if (timer == timerLimit)
+		if (timer >= timerLimit)
 		{
-			for(int i = 0; i <numEnemy;i++)
+			timer = 0;
+			for(int i = 0; i <rand.nextInt(4);i++)
 			{
-				listEnemy.add(new EnemyGR(800, rand.nextInt(600), 50,50, "/Images/Amarelo.png", null));
+				listEnemy.add(new EnemyGR(800, rand.nextInt(600), 50,50, "/images/inimigos_2.png", null));
 			}
 		}
 		
-			
 		if (listEnemy.size() > 0)
 		{
 			for (int e = 0; e < listEnemy.size();e++)
 			{	
 				listEnemy.get(e).Update();			
+			}
+		}
+		
+		for (EnemyGR e : listEnemy)
+		{
+			if (Collision.CheckCollision(e, Game2.player))
+			{
+				listEnemy.remove(e);
+				Game2.player.life -= 1;
 			}
 		}
 	}
@@ -53,7 +62,4 @@ public class EnemyManagerGR
 			}
 		}
 	}
-	
-	
-	
 }

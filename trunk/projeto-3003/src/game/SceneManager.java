@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 
 public class SceneManager 
 {
@@ -145,6 +146,13 @@ public class SceneManager
 	public static void update()
 	{
 		scene.update();	
+		
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ESCAPE))
+		{
+			scene = new Opening();
+			currentScene = SCENE.OPENING;
+		}
+		
 	}
 	
 	public static void draw(Graphics2D g2d)

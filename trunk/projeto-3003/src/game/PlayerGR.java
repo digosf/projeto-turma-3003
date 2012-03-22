@@ -6,10 +6,12 @@ public class PlayerGR extends GameObject
 {
 	private final int speed = 2;
 	private int minX, minY, maxX, maxY;
+	public int life;
 	
 	public PlayerGR(float x, float y, int w, int h, String image, SoundClip sound) 
 	{
 		super(x, y, w, h, image, sound);
+		life = 15;
 	}
 	
 	public void ChangeBounds(int minX, int maxX, int minY, int maxY)
@@ -26,7 +28,7 @@ public class PlayerGR extends GameObject
 		//Atirar
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_A))
 		{ 
-			FriendlyShotManagerGR.Fire();			
+			FriendlyShotManagerGR.Fire();
 		}
 		
 		//if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ENTER)) { FriendlyShotManager.Fire(this); }
@@ -38,6 +40,9 @@ public class PlayerGR extends GameObject
 		//Movimentação vertical.
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_UP)) { this.y -= this.speed; }
 		else if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN)) { this.y += this.speed; }
+		
+		if (life <= 0)
+			SceneManager.changeScene(1);
 		
 		//Limits();
 	}
