@@ -6,10 +6,15 @@ import java.awt.geom.Point2D;
 public class Game1 extends Scene{
 	
 	Background background;
+	
 	static PlayerSI player;
+	
 	static EnemyManagerSI enemy;
+	
 	static EnemyShotManagerSI tiroInimigo;
-	ShooterManagerSI tiroAmigo;	
+	
+	ShooterManagerSI tiroAmigo;
+	
 	SoundClip themeclip;
 	
 	public Game1()

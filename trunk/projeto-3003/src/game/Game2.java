@@ -20,11 +20,14 @@ public class Game2 extends Scene {
 	public void update() {
 		// TODO Auto-generated method stub
 		player.Update();
+		
 		FriendlyShotManagerGR.Update();
+		
 		enemyManagerGR.Update();
 		
 		if (i ++ > 9000)
-			SceneManager.changeScene(0);
+			SceneManager.changeScene(0);	
+		
 	}
 	
 	@Override

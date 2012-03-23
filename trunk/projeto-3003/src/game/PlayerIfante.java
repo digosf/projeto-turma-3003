@@ -33,6 +33,7 @@ public class PlayerIfante extends GameObject{
 			x = 0;
 		if (x + w > 800)
 			x = 800 - w;
+		
 		if (y < 0 || y > 600 - h)
 			SceneManager.changeScene(1);
         

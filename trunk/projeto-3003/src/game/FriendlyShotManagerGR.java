@@ -7,6 +7,8 @@ public class FriendlyShotManagerGR {
 	
 	public static LinkedList<ShootFriendGR> ShootFriendList = new LinkedList<ShootFriendGR>();
 	
+	static int contador = 0;
+
 	public FriendlyShotManagerGR()
 	{
 	}
@@ -27,6 +29,8 @@ public class FriendlyShotManagerGR {
 				}
 			}
 		}
+		
+		contador ++;
 	}
 	
 	public static void Draw(Graphics2D g2d)
@@ -39,8 +43,12 @@ public class FriendlyShotManagerGR {
 	
 	public static void Fire()
 	{
-		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y,
+		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y + 15,
 				20,10,"/images/tiro_player.png",null);
-		ShootFriendList.add(shoot);
+		if(contador >= 60)
+		{
+			ShootFriendList.add(shoot);
+			contador = 0;
+		}
 	}
 }

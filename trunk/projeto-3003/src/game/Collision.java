@@ -6,8 +6,6 @@ public class Collision {
 	
 	private static Rectangle r1;
     private static Rectangle r2;
-    
-    private static boolean result;
 	
 	private Collision()
 	{	

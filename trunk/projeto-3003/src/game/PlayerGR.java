@@ -44,12 +44,28 @@ public class PlayerGR extends GameObject
 		if (life <= 0)
 			SceneManager.changeScene(1);
 		
-		//Limits();
+		
+		
+		Limits();
 	}
 	
-	/*private void Limits()
+	private void Limits()
 	{
-		if(this.x > this.maxX) { this.x = this.maxX; } else if(this.x < this.minX) { this.x = this.minX; }
-		if(this.y > this.maxY) { this.y = this.maxY; } else if(this.x < this.minY) { this.x = this.minY; }
-	}*/
+		if(this.x >= 800 - this.w) 
+		{ 
+			this.x = 800 - this.w;
+		}
+		if(this.x <= 0) 
+		{ 
+			this.x = 0; 
+		}
+		if(this.y <= 0) 
+		{ 
+			this.y = 0; 
+		}
+		if(this.y >= 600 - this.h) 
+		{ 
+			this.y = 600 - this.h;; 
+		}
+	}
 }

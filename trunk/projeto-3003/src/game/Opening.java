@@ -13,6 +13,10 @@ public class Opening extends Scene {
 	public void update() {
 		// TODO Auto-generated method stub
 		
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_0))
+		{
+			SceneManager.changeScene(2);
+		}
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_1))
 		{
 			SceneManager.changeScene(0);
@@ -20,10 +24,6 @@ public class Opening extends Scene {
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_2))
 		{
 			SceneManager.changeScene(1);
-		}
-		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_3))
-		{
-			SceneManager.changeScene(2);
 		}
 	}
 	@Override

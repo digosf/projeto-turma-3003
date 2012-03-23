@@ -1,8 +1,5 @@
 package game;
 
-import java.util.Random;
-import java.util.RandomAccess;
-
 public class EnemyGR extends GameObject
 {
 	boolean subindo = false;
