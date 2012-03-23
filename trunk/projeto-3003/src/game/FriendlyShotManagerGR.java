@@ -45,7 +45,7 @@ public class FriendlyShotManagerGR {
 	{
 		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y + 15,
 				20,10,"/images/tiro_player.png",null);
-		if(contador >= 60)
+		if(contador >= 30)
 		{
 			ShootFriendList.add(shoot);
 			contador = 0;

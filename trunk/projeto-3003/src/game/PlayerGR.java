@@ -11,7 +11,7 @@ public class PlayerGR extends GameObject
 	public PlayerGR(float x, float y, int w, int h, String image, SoundClip sound) 
 	{
 		super(x, y, w, h, image, sound);
-		life = 15;
+		life = 5;
 	}
 	
 	public void ChangeBounds(int minX, int maxX, int minY, int maxY)
@@ -26,7 +26,7 @@ public class PlayerGR extends GameObject
 	public void Update()
 	{
 		//Atirar
-		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_A))
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE))
 		{ 
 			FriendlyShotManagerGR.Fire();
 		}

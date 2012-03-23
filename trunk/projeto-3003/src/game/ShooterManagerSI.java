@@ -1,5 +1,6 @@
 package game;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
 public class ShooterManagerSI
@@ -19,11 +20,17 @@ public class ShooterManagerSI
 	
 	public void Update()
 	{
-		time++;
+		/*time++;
 		if(time > timeReaming)
 		{
 			time = 0;
 			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX(), (float)PlayerSI.getPosition().getY(), 10,10, "/images/tiro_inimigo.png", null ));
+		}*/
+		time++;
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE) && time >= 30)
+		{
+			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX() + 35, (float)PlayerSI.getPosition().getY(), 10,10, "/images/tiro_inimigo.png", null ));
+			time = 0;
 		}
 		
 		/*for(int i = 0; i < shotSI.size(); i++)

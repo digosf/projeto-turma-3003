@@ -22,7 +22,7 @@ public class PlayerSI extends GameObject
 	{
 		super((int)position.getX(), (int)position.getY(), (int)size.getX(), (int)size.getY(), img, null);
 		this.speed = 5;
-		life = 15;
+		life = 5;
 	}
 	
 	public void SpeedValue(int speedValue)
