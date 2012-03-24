@@ -8,6 +8,7 @@ public class Game3 extends Scene
 	PlayerIfante player;
 	PlataformMananger manager;
 	
+	final float maxTime = 1000;
 	float time;
 	
 	public Game3()
@@ -30,7 +31,7 @@ public class Game3 extends Scene
 		
 		time += System.nanoTime() / 1000000000000000.0f;
 		
-		if (time >= 60)
+		if (time >= maxTime)
 			SceneManager.changeScene(0);
 	}
 	
