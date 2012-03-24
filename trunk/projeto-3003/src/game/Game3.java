@@ -12,6 +12,7 @@ public class Game3 extends Scene
 	{
 		// nao e possivel carregar a imaem de fundo do pluemet, motivo desconhecido.
 		// motivo desconhecido = a imagem está corrompida.
+		TimeXSpeedManager.speed = 1;
 		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", null);
 		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png", null);
 		manager = new PlataformMananger();
