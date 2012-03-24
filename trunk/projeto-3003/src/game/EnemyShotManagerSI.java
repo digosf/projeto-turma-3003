@@ -36,6 +36,7 @@ public class EnemyShotManagerSI {
 			{
 				shotList.remove(s);
 				Game1.player.life -= 1;
+				break;
 			}
 		}
 		

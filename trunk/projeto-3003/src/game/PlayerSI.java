@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Point2D;
 
@@ -46,7 +47,15 @@ public class PlayerSI extends GameObject
 		this.FixedLimits();
 		
 	}
-	
+	@Override
+	public void Draw(Graphics2D g2d) {
+		// TODO Auto-generated method stub
+		
+		for(int i = 0; i< life; i++)
+		g2d.drawImage(image,0 + (w/2)*i, 600-h/2,w/2,h/2, null);
+		
+		super.Draw(g2d);
+	}
 	// Limita a movimentacao do personagem dentro da tela de jogo
 	private void FixedLimits()
 	{

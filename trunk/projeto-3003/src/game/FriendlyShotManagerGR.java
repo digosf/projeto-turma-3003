@@ -26,6 +26,7 @@ public class FriendlyShotManagerGR {
 				{
 					ShootFriendList.remove(s);
 					Game2.enemyManagerGR.listEnemy.remove(e);
+					break;
 				}
 			}
 		}

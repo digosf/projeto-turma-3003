@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
 public class PlayerGR extends GameObject
@@ -47,6 +48,14 @@ public class PlayerGR extends GameObject
 		
 		
 		Limits();
+	}
+	@Override
+	public void Draw(Graphics2D g2d) {
+		// TODO Auto-generated method stub
+		for(int i = 0; i< life; i++)
+			g2d.drawImage(image,0 + (w/2)*i, 600-h/2,w/2,h/2, null);
+		
+		super.Draw(g2d);
 	}
 	
 	private void Limits()

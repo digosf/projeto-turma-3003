@@ -48,6 +48,7 @@ public class EnemyManagerGR
 			{
 				listEnemy.remove(e);
 				Game2.player.life -= 1;
+				break;
 			}
 		}
 	}
