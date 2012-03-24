@@ -8,11 +8,14 @@ public class Game3 extends Scene
 	PlayerIfante player;
 	PlataformMananger manager;
 	
+	float time;
+	
 	public Game3()
 	{
 		// nao e possivel carregar a imaem de fundo do pluemet, motivo desconhecido.
 		// motivo desconhecido = a imagem está corrompida.
 		TimeXSpeedManager.speed = 1;
+		TimeXSpeedManager.time = 0;
 		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", null);
 		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png", null);
 		manager = new PlataformMananger();
@@ -24,6 +27,11 @@ public class Game3 extends Scene
 		TimeXSpeedManager.Update();
 		player.Update();
 		manager.Update(player);
+		
+		time += System.nanoTime() / 1000000000000000.0f;
+		
+		if (time >= 60)
+			SceneManager.changeScene(0);
 	}
 	
 	@Override
@@ -31,5 +39,6 @@ public class Game3 extends Scene
 		background.Draw(g2d);
 		manager.Draw(g2d);
 		player.Draw(g2d);
+		g2d.drawString("Tempo: " + (int)time, 10, 30);
 	}
 }
