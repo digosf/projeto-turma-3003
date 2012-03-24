@@ -28,10 +28,10 @@ public class TimeXSpeedManager
 	{
 		time += System.nanoTime() / 1000000000000000.0f; //Tempo de duração do frame atual + tempo atual.
 		
-		if(time >= changeSpeedDelay) // Se tempo for maior que o delay, tempo = 0, delay aumenta (5) e velocidade aumenta (1).
+		if(time >= changeSpeedDelay) // Se tempo for maior que o delay, tempo = 0, delay aumenta (10) e velocidade aumenta (1).
 		{
 			time = 0;
-			changeSpeedDelay += 5f;
+			changeSpeedDelay += 10f;
 			speed++;
 		}
 	}

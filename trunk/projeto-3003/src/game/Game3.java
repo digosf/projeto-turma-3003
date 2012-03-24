@@ -8,7 +8,7 @@ public class Game3 extends Scene
 	PlayerIfante player;
 	PlataformMananger manager;
 	
-	final float maxTime = 1000;
+	final float maxTime = 600;
 	float time;
 	
 	public Game3()
@@ -41,5 +41,7 @@ public class Game3 extends Scene
 		manager.Draw(g2d);
 		player.Draw(g2d);
 		g2d.drawString("Tempo: " + (int)time, 10, 30);
+		g2d.drawString("Speed: " + TimeXSpeedManager.speed, 350, 30);
+		//g2d.drawString("Delay: " + TimeXSpeedManager.changeSpeedDelay, 400, 30);
 	}
 }
