@@ -6,36 +6,49 @@ import java.util.Random;
 
 public class PlataformMananger 
 {
-	LinkedList<Plataform> objetos; 
-	Random random;
-	float tempo = 0;
+	LinkedList<Plataform> objetos = new LinkedList<Plataform>(); 
+	Random rand = new Random();
+	
+	int platWidth;
+	int platHeight;
 	
 	public PlataformMananger() 
 	{
+		platWidth = 150;
+		platHeight = 50;
+		
+		for (int i = 0; i < 5; i++)
+		{
+			if (i == 0)
+				this.objetos.add(new Plataform(400, 200, platWidth, platHeight, "/images/platforma_curva.png", null));
+			else
+				this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 200 + (i * 150), platWidth, platHeight, "/images/platforma_curva.png", null));
+		}
 	}
 	
 	public void Update(PlayerIfante player) 
 	{
-		tempo += System.nanoTime() / 10000000000000000.0f;
 		
-		//if(tempo > 4)
-		//{
-		//tempo = 0;
-		AdicionarPlataforma();
-		//}
-		
-		/*for(int i = 0; i < objetos.size(); i++)
+		for(int i = 0; i < objetos.size(); i++)
 		{
-			((Plataform)objetos.get(i)).Update();
-			if (Collision.CheckCollision(player, (Plataform)objetos.get(i), player.oldPosX, player.oldPosY, "top", TimeXSpeedManager.speed))
+			if (Collision.CheckCollision(player, objetos.get(i), player.oldPosX, player.oldPosY, "top", TimeXSpeedManager.speed))
 				player.y = objetos.get(i).y - player.h;
-			/*if (Collision.CheckCollision(player, (Plataform)objetos.get(i), player.oldPosX, player.oldPosY, "bottom", 0))
+			if (Collision.CheckCollision(player, objetos.get(i), player.oldPosX, player.oldPosY, "bottom", 0))
 				player.y = objetos.get(i).y;
-			if (Collision.CheckCollision(player, (Plataform)objetos.get(i), player.oldPosX, player.oldPosY, "left", 0))
+			if (Collision.CheckCollision(player, objetos.get(i), player.oldPosX, player.oldPosY, "left", 0))
 				player.x = objetos.get(i).x - player.w;
-			if (Collision.CheckCollision(player, (Plataform)objetos.get(i), player.oldPosX, player.oldPosY, "right", 0))
+			if (Collision.CheckCollision(player, objetos.get(i), player.oldPosX, player.oldPosY, "right", 0))
 				player.x = objetos.get(i).x + objetos.get(i).w;
-		}*/
+			
+			objetos.get(i).Update();
+			
+			if (objetos.get(i).y + objetos.get(i).h < 0)
+			{
+				objetos.remove(objetos.get(i));
+				AdicionarPlataforma();
+				i--;
+			}
+		}
 	}
 	
 	
@@ -58,6 +71,6 @@ public class PlataformMananger
 		
 	private void AdicionarPlataforma()
 	{
-		this.objetos.add(new Plataform(400, 300, 417, 94, "/images/banner.png", null , 1));
+		this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 600, platWidth, platHeight, "/images/platforma_curva.png", null));
 	}
 }

@@ -15,15 +15,15 @@ public class Opening extends Scene {
 		
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_0))
 		{
-			SceneManager.changeScene(2);
+			SceneManager.changeScene(0);
 		}
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_1))
 		{
-			SceneManager.changeScene(0);
+			SceneManager.changeScene(1);
 		}
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_2))
 		{
-			SceneManager.changeScene(1);
+			SceneManager.changeScene(2);
 		}
 	}
 	@Override

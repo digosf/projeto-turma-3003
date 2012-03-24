@@ -6,22 +6,23 @@ public class Collision {
 	
 	private static Rectangle r1;
     private static Rectangle r2;
+	private static boolean result;
 	
 	private Collision()
 	{	
 	}
     
-    //Colisão simples, apenas necessita de dois objetos e verifica a colisãoentre eles
+    //Colisão simples, apenas necessita de dois objetos e verifica a colisão entre eles
     public static boolean CheckCollision(GameObject go1, GameObject go2)
     {
     	UpdateRect(go1, go2);
     	return (r1.intersects(r2));
     }
     
-    //Colisão mais precisa que além do lado necessita da velocidade do segundo corpo 
-	//e a posição antiga do primeiro.
-    /*public static boolean CheckCollision(GameObject go1, GameObject go2, float oldPosX, float oldPosY, String side, float object2Speed)
+    //Colisão mais precisa que além do lado necessita da posição antiga do objeto1 e da velocidade do objeto2.
+    public static boolean CheckCollision(GameObject go1, GameObject go2, float oldPosX, float oldPosY, String side, float object2Speed)
     {
+    	
         UpdateRect(go1, go2);
         if(side == "left")
         	result = (r1.intersects(r2) && (r1.x + r1.width) - (go1.x - oldPosX) - object2Speed <= r2.x);
@@ -32,7 +33,7 @@ public class Collision {
         if(side == "bottom")
         	result = (r1.intersects(r2) && r1.y + (oldPosY - go1.y) + object2Speed >= (r2.y + r2.height));
         return result;
-    }*/
+    }
     
     //Atualiza os valores dos retângulos.
     private static void UpdateRect(GameObject go1, GameObject go2)

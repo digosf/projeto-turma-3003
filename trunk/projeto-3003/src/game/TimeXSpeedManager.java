@@ -26,7 +26,7 @@ public class TimeXSpeedManager
 	//Atualiza o tempo e a velocidade.
 	public static void Update() 
 	{
-		time += System.nanoTime() / 10000000000000000.0f; //Tempo de duração do frame atual + tempo atual.
+		time += System.nanoTime() / 1000000000000000.0f; //Tempo de duração do frame atual + tempo atual.
 		
 		if(time >= changeSpeedDelay) // Se tempo for maior que o delay, tempo = 0 e velocidade aumenta (1).
 		{

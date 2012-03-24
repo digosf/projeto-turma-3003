@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 
 public class PlayerIfante extends GameObject{
 
-	private int speed = 10;
+	private int speed = 5;
 	
 	public float oldPosX;
 	public float oldPosY;
@@ -17,8 +17,12 @@ public class PlayerIfante extends GameObject{
 	@Override
 	public void Update()
 	{
-		oldPosX = x;
-		oldPosY = y;
+		//posicao antiga utilizada na colisao
+		oldPosX = this.x;
+		oldPosY = this.y;
+		
+		//para o jogador cair caso não esteja colidindo
+		this.y += speed;
 		
 		if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_LEFT) && super.x > 0)
 		{
@@ -34,7 +38,8 @@ public class PlayerIfante extends GameObject{
 		if (x + w > 800)
 			x = 800 - w;
 		
-		if (y < 0 || y > 600 - h)
+		//Caso ultrapasse as duas extremidades da vertical chamará GameOver
+		if (y + h < 0 || y > 600 - h)
 			SceneManager.changeScene(1);
         
 	}

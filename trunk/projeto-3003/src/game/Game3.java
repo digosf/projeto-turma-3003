@@ -11,24 +11,22 @@ public class Game3 extends Scene
 	public Game3()
 	{
 		// nao e possivel carregar a imaem de fundo do pluemet, motivo desconhecido.
+		// motivo desconhecido = a imagem está corrompida.
 		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", null);
-		player = new PlayerIfante(400, 0, 148, 268, "/images/PersonagemPlumet.png", null);
+		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png", null);
 		manager = new PlataformMananger();
 	}
 	
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		//TimeXSpeedManager.Update();
+		TimeXSpeedManager.Update();
 		player.Update();
-		//manager.Update(player);
+		manager.Update(player);
 	}
 	
 	@Override
 	public void draw(Graphics2D g2d) {
-		
-		//tiroInimigo.draw(g2d);
-		//tiroAmigo.Draw(g2d);
 		background.Draw(g2d);
 		manager.Draw(g2d);
 		player.Draw(g2d);
