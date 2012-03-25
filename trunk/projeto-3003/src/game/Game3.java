@@ -22,7 +22,7 @@ public class Game3 extends Scene
 		TimeXSpeedManager.time = 0;
 		TimeXSpeedManager.changeSpeedDelay = 10f;
 		
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", null);
+		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", null, false);
 		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png", null);
 		manager = new PlataformMananger();
 	}

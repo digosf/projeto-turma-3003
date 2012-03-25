@@ -12,7 +12,7 @@ public class Logo extends Scene
 
 		public Logo ()
 		{
-			background = new Background(0, 0, 800, 600, "/images/Logo.jpg",null);
+			background = new Background(0, 0, 800, 600, "/images/Logo.jpg",null, false);
 		}
 
 		@Override

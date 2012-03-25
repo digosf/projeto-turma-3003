@@ -15,7 +15,7 @@ public class Game2 extends Scene {
 	
 	public Game2()
 	{
-		background = new Background(0, 0, 800, 600, "/images/GradiusFundo.jpg", null);
+		background = new Background(0, 0, 800, 600, "/images/GradiusFundo.jpg", null, true);
 		player = new PlayerGR(10,300, 100, 30, "/images/player.png", null);
 		enemyManagerGR = new EnemyManagerGR();
  	}
@@ -24,6 +24,7 @@ public class Game2 extends Scene {
 	public void update() {
 		// TODO Auto-generated method stub
 		player.Update();
+		background.Update();
 		
 		FriendlyShotManagerGR.Update();
 		

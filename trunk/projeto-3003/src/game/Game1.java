@@ -28,7 +28,7 @@ public class Game1 extends Scene{
 		themeclip.load("/sounds/theme_SI.wav", true);
 		
 		player = new PlayerSI(new Point2D.Float(400 - 40,550),new Point2D.Float(80,40),"/images/personagemSpaceInvader.png");
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", themeclip);
+		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", themeclip, false);
 		enemy = new EnemyManagerSI(null);
 		tiroInimigo = new EnemyShotManagerSI();
 		tiroAmigo = new ShooterManagerSI();
@@ -38,7 +38,6 @@ public class Game1 extends Scene{
 	public void update() {
 		// TODO Auto-generated method stub
 		enemy.update();
-		background.Update();
 		player.Update();
 		tiroInimigo.update();
 		tiroAmigo.Update();
