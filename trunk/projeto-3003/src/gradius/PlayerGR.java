@@ -31,6 +31,9 @@ public class PlayerGR extends GameObject
 	@Override
 	public void Update()
 	{
+		
+		this.x -= 1;
+		
 		//Atirar
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE))
 		{ 
