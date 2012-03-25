@@ -1,4 +1,8 @@
-package game;
+package spaceInvaders;
+import game.Collision;
+import game.Game1;
+import game.Keyboard;
+
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;

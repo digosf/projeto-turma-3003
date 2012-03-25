@@ -1,4 +1,7 @@
-package game;
+package gradius;
+
+import game.GameObject;
+import game.SoundClip;
 
 class ShotFriend extends GameObject
 

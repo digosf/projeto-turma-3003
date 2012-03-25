@@ -1,4 +1,8 @@
-package game;
+package ifante;
+
+import game.GameObject;
+import game.SoundClip;
+import game.TimeXSpeedManager;
 
 public class Plataform extends GameObject {
 	

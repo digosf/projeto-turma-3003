@@ -1,12 +1,16 @@
 package game;
 
+import gradius.EnemyManagerGR;
+import gradius.FriendlyShotManagerGR;
+import gradius.PlayerGR;
+
 import java.awt.Graphics2D;
 
 public class Game2 extends Scene {
 
 	Background background;
 	static public PlayerGR player;
-	static EnemyManagerGR enemyManagerGR;
+	public static EnemyManagerGR enemyManagerGR;
 	int i;
 	
 	public Game2()

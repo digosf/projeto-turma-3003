@@ -3,13 +3,18 @@ package game;
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 
+import spaceInvaders.EnemyManagerSI;
+import spaceInvaders.EnemyShotManagerSI;
+import spaceInvaders.PlayerSI;
+import spaceInvaders.ShooterManagerSI;
+
 public class Game1 extends Scene{
 	
 	Background background;
 	
-	static PlayerSI player;
+	public static PlayerSI player;
 	
-	static EnemyManagerSI enemy;
+	public static EnemyManagerSI enemy;
 	
 	static EnemyShotManagerSI tiroInimigo;
 	

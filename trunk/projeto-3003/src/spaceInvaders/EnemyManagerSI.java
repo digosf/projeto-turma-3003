@@ -1,4 +1,7 @@
-package game;
+package spaceInvaders;
+
+import game.SceneManager;
+import game.SoundClip;
 
 import java.awt.Graphics2D;
 import java.util.LinkedList;

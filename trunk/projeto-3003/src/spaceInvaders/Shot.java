@@ -1,4 +1,7 @@
-package game;
+package spaceInvaders;
+
+import game.GameObject;
+import game.SoundClip;
 
 public abstract class Shot extends GameObject
 {

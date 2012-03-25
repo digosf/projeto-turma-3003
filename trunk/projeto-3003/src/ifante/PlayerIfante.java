@@ -1,4 +1,9 @@
-package game;
+package ifante;
+
+import game.GameObject;
+import game.Keyboard;
+import game.SceneManager;
+import game.SoundClip;
 
 import java.awt.event.KeyEvent;
 

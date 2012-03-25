@@ -1,5 +1,8 @@
 package game;
 
+import ifante.PlataformMananger;
+import ifante.PlayerIfante;
+
 import java.awt.Graphics2D;
 
 public class Game3 extends Scene

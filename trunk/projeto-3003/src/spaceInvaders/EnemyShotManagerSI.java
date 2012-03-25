@@ -1,4 +1,8 @@
-package game;
+package spaceInvaders;
+import game.Collision;
+import game.Game1;
+import game.SoundClip;
+
 import java.awt.Graphics2D;
 import java.util.LinkedList;
 import java.util.Random;

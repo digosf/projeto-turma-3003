@@ -1,4 +1,7 @@
-package game;
+package ifante;
+
+import game.Collision;
+import game.TimeXSpeedManager;
 
 import java.awt.Graphics2D;
 import java.util.LinkedList;

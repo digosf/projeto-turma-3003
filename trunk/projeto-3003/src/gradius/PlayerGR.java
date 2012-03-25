@@ -1,4 +1,9 @@
-package game;
+package gradius;
+
+import game.GameObject;
+import game.Keyboard;
+import game.SceneManager;
+import game.SoundClip;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;

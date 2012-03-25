@@ -1,4 +1,7 @@
-package game;
+package gradius;
+
+import game.Collision;
+import game.Game2;
 
 import java.awt.Graphics2D;
 import java.util.LinkedList;

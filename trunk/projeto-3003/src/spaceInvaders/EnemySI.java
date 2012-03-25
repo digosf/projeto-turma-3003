@@ -1,4 +1,7 @@
-package game;
+package spaceInvaders;
+
+import game.GameObject;
+import game.SoundClip;
 
 public class EnemySI extends GameObject
 {
