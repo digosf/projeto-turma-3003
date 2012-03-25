@@ -1,5 +1,7 @@
 package spaceInvaders;
 
+import game.Collision;
+import game.Game1;
 import game.SceneManager;
 import game.SoundClip;
 
@@ -26,7 +28,7 @@ public class EnemyManagerSI {
 	{
 		collision = true;
 		this.speedX = 4;
-		this.speedY = 5;
+		this.speedY = 30;
 		EnemyManagerSI.sound = sound;
 		//listEnemy = new LinkedList<EnemySI>();
 		NewEnemy(8, 4);
@@ -38,16 +40,6 @@ public class EnemyManagerSI {
     	
     	for(int i = 0; i < listEnemy.size(); i++)
     	{
-    		//Teste da colisao com as bordas
-    		/*if(listEnemy.get(i).x <= 40 || listEnemy.get(i).x + listEnemy.get(i).w >= 800)
-    		{
-    			//collision = false;
-    			if (collision)
-    				collision = false;
-    			else
-    				collision = true;
-    		}*/
-    		
     		if (listEnemy.get(i).x <= 0)
     		{
     			this.speedX = 2;
@@ -61,13 +53,15 @@ public class EnemyManagerSI {
     		}
     	}
     	
-    	//Variavel resultante da velocidade Y que sera adicionada apenas quando o inimigo tocar na tela
-    	
-    	/*if(collision)
-    	{
-    		this.speedX *= -1;	//Inverte direcao X 
-    		speedYTemp = this.speedY;
-    	}*/
+    	for (EnemySI s : listEnemy)
+		{
+			if (Collision.CheckCollision(s, Game1.player))
+			{
+				listEnemy.remove(s);
+				Game1.player.life -= 1;
+				break;
+			}
+		}
     	
     	//Update do inimigo
     	for(EnemySI enemy: listEnemy)
