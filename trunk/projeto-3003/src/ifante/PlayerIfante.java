@@ -15,8 +15,8 @@ public class PlayerIfante extends GameObject{
 	public float oldPosY;
 	
 	public PlayerIfante(float x, float y, int w, int h, String image,
-			SoundClip sound) {
-		super(x, y, w, h, image, sound);
+			String sound, int soundLoop) {
+		super(x, y, w, h, image, sound, soundLoop);
 	}
 	
 	@Override

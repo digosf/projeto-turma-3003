@@ -48,7 +48,7 @@ public class FriendlyShotManagerGR {
 	public static void Fire()
 	{
 		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y + 15,
-				20,10,"/images/tiro_player.png",null);
+				20,10,"/images/tiro_player.png", "/sounds/shoot_GR.wav", 0);
 		if(contador >= 30)
 		{
 			ShootFriendList.add(shoot);

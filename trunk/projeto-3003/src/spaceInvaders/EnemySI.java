@@ -7,8 +7,8 @@ public class EnemySI extends GameObject
 {
 	
 	
-public EnemySI(float x, float y, int w, int h, String image, SoundClip sound) {
-		super(x, y, w, h, image, sound);
+public EnemySI(float x, float y, int w, int h, String image, String sound, int soundLoop) {
+		super(x, y, w, h, image, sound, soundLoop);
 		
 		
 	}	

@@ -11,7 +11,7 @@ class GameOver extends Scene
 
 	public GameOver()
 	{
-		background = new Background(0, 0, 800, 600,"/images/game_over.png", null,false);
+		background = new Background(0, 0, 800, 600,"/images/game_over.png", false, null, 0);
 	}
 
 	public void update()

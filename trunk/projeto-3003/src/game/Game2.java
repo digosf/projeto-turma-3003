@@ -6,17 +6,19 @@ import gradius.PlayerGR;
 
 import java.awt.Graphics2D;
 
+import javax.sound.sampled.Clip;
+
 public class Game2 extends Scene {
 
-	Background background;
+	public Background background;
 	static public PlayerGR player;
 	public static EnemyManagerGR enemyManagerGR;
 	int i;
 	
 	public Game2()
 	{
-		background = new Background(0, 0, 800, 600, "/images/GradiusFundo.jpg", null, true);
-		player = new PlayerGR(10,300, 100, 30, "/images/player.png", null);
+		background = new Background(0, 0, 800, 600, "/images/GradiusFundo.jpg", true, "/sounds/theme_GR.wav", Clip.LOOP_CONTINUOUSLY);
+		player = new PlayerGR(10,300, 100, 30, "/images/player.png", null, 0);
 		enemyManagerGR = new EnemyManagerGR();
  	}
 
@@ -42,5 +44,10 @@ public class Game2 extends Scene {
 		enemyManagerGR.Draw(g2d);
 		FriendlyShotManagerGR.Draw(g2d);
 		player.Draw(g2d);
+	}
+	
+	public void StopBGSound()
+	{
+		background.clip.stop();
 	}
 }

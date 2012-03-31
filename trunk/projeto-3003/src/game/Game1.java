@@ -3,6 +3,8 @@ package game;
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 
+import javax.sound.sampled.Clip;
+
 import spaceInvaders.EnemyManagerSI;
 import spaceInvaders.EnemyShotManagerSI;
 import spaceInvaders.PlayerSI;
@@ -10,7 +12,7 @@ import spaceInvaders.ShooterManagerSI;
 
 public class Game1 extends Scene{
 	
-	Background background;
+	public Background background;
 	
 	public static PlayerSI player;
 	
@@ -20,15 +22,10 @@ public class Game1 extends Scene{
 	
 	ShooterManagerSI tiroAmigo;
 	
-	SoundClip themeclip;
-	
 	public Game1()
-	{
-		themeclip = new SoundClip();
-		themeclip.load("/sounds/theme_SI.wav", true);
-		
+	{	
 		player = new PlayerSI(new Point2D.Float(400 - 40,550),new Point2D.Float(80,40),"/images/personagemSpaceInvader.png");
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", themeclip, false);
+		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false, "/sounds/theme_SI.wav", Clip.LOOP_CONTINUOUSLY);
 		enemy = new EnemyManagerSI(null);
 		tiroInimigo = new EnemyShotManagerSI();
 		tiroAmigo = new ShooterManagerSI();
@@ -43,6 +40,7 @@ public class Game1 extends Scene{
 		tiroAmigo.Update();
 		
 	}
+	
 	@Override
 	public void draw(Graphics2D g2d) {
 		
@@ -51,5 +49,10 @@ public class Game1 extends Scene{
 		enemy.draw(g2d);
 		tiroInimigo.draw(g2d);
 		tiroAmigo.Draw(g2d);
+	}
+	
+	public void StopBGSound()
+	{
+		background.clip.stop();
 	}
 }

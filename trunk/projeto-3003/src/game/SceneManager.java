@@ -1,8 +1,13 @@
 package game;
 
 
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+
+import javax.sound.sampled.*;
+import javax.sound.sampled.spi.AudioFileReader;
 
 public class SceneManager 
 {
@@ -58,6 +63,7 @@ public class SceneManager
 				{
 					case 0:
 					{
+						scene.StopBGSound();
 						scene = new Congrats();
 						currentScene = SCENE.CONGRATS;
 						
@@ -65,6 +71,7 @@ public class SceneManager
 					}
 					case 1:
 					{
+						scene.StopBGSound();
 						scene = new GameOver();
 						currentScene = SCENE.GAMEOVER;
 						break;
@@ -81,6 +88,7 @@ public class SceneManager
 				{
 					case 0:
 					{
+						scene.StopBGSound();
 						scene = new Congrats();
 						currentScene = SCENE.CONGRATS;
 						
@@ -88,6 +96,7 @@ public class SceneManager
 					}
 					case 1:
 					{
+						scene.StopBGSound();
 						scene = new GameOver();
 						currentScene = SCENE.GAMEOVER;
 						break;
@@ -104,6 +113,7 @@ public class SceneManager
 				{
 					case 0:
 					{
+						scene.StopBGSound();
 						scene = new Congrats();
 						currentScene = SCENE.CONGRATS;
 						
@@ -111,6 +121,7 @@ public class SceneManager
 					}
 					case 1:
 					{
+						scene.StopBGSound();
 						scene = new GameOver();
 						currentScene = SCENE.GAMEOVER;
 						break;
@@ -150,6 +161,7 @@ public class SceneManager
 		
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ESCAPE))
 		{
+			scene.StopBGSound();
 			scene = new Opening();
 			currentScene = SCENE.OPENING;
 		}

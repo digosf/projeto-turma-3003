@@ -11,9 +11,9 @@ public class EnemyGR extends GameObject
 	
 	float speedMoviment = 5;
 
-	public EnemyGR(float x, float y, int w, int h, String image, SoundClip sound) 
+	public EnemyGR(float x, float y, int w, int h, String image, String sound, int soundLoop) 
 	{
-		super(x, y, w, h, image, sound);
+		super(x, y, w, h, image, sound, soundLoop);
 	}
 	
 	@Override

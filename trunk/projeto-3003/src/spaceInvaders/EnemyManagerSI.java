@@ -100,7 +100,7 @@ public class EnemyManagerSI {
 											sizeWidth, 
 											sizeHeight,
 											"/images/inimigos_1.png",
-											sound));
+											null, 0));
 			}
 		}
 	}

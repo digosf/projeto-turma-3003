@@ -2,13 +2,15 @@ package game;
 
 import java.awt.Graphics2D;
 
+import javax.sound.sampled.Clip;
+
 public class Background extends GameObject{
 			
 	boolean parallax;
 	
-	public Background(float x, float y, int w, int h, String image, SoundClip sound, boolean parallax)
+	public Background(float x, float y, int w, int h, String image, boolean parallax, String sound, int soundLoop)
 	{
-		 super(x, y, w, h, image,sound);
+		 super(x, y, w, h, image, sound, soundLoop );
 		 this.parallax = parallax;
 	}
 	

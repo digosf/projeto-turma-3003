@@ -25,7 +25,7 @@ public class PlayerSI extends GameObject
 	// Construtor
 	public PlayerSI(Point2D position, Point2D size, String img)
 	{
-		super((int)position.getX(), (int)position.getY(), (int)size.getX(), (int)size.getY(), img, null);
+		super((int)position.getX(), (int)position.getY(), (int)size.getX(), (int)size.getY(), img, null, 0);
 		this.speed = 5;
 		life = 5;
 	}

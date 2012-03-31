@@ -1,5 +1,6 @@
 package gradius;
 
+import game.Background;
 import game.GameObject;
 import game.Keyboard;
 import game.SceneManager;
@@ -14,9 +15,9 @@ public class PlayerGR extends GameObject
 	private int minX, minY, maxX, maxY;
 	public int life;
 	
-	public PlayerGR(float x, float y, int w, int h, String image, SoundClip sound) 
+	public PlayerGR(float x, float y, int w, int h, String image, String sound, int soundLoop) 
 	{
-		super(x, y, w, h, image, sound);
+		super(x, y, w, h, image, sound, soundLoop);
 		life = 5;
 	}
 	
@@ -51,7 +52,9 @@ public class PlayerGR extends GameObject
 		else if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN)) { this.y += this.speed; }
 		
 		if (life <= 0)
+		{
 			SceneManager.changeScene(1);
+		}
 		
 		
 		

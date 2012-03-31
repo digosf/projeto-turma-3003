@@ -6,9 +6,9 @@ public class FriendShotSI extends Shot
 {
 	
 	//Alterado por felipe, nao descomente este codigo.
-	public FriendShotSI(float x, float y, int w, int h, String image, SoundClip sound)
+	public FriendShotSI(float x, float y, int w, int h, String image, String sound, int soundLoop)
 	{
-		super(x, y, w, h, image, sound);
+		super(x, y, w, h, image, sound, soundLoop);
 		speedY = 3;
 	}
 	

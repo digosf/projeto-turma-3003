@@ -7,7 +7,7 @@ public class Opening extends Scene {
 	Background background;
 	public Opening ()
 	{
-		background = new Background(0,0,800,600,"/images/background_opening.png", null, false);
+		background = new Background(0,0,800,600,"/images/background_opening.png", false, null, 0);
 	}
 	@Override
 	public void update() {

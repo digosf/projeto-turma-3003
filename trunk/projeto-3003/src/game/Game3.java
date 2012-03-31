@@ -5,9 +5,11 @@ import ifante.PlayerIfante;
 
 import java.awt.Graphics2D;
 
+import javax.sound.sampled.Clip;
+
 public class Game3 extends Scene
 {
-	Background background;
+	public Background background;
 	PlayerIfante player;
 	PlataformMananger manager;
 	
@@ -22,8 +24,8 @@ public class Game3 extends Scene
 		TimeXSpeedManager.time = 0;
 		TimeXSpeedManager.changeSpeedDelay = 10f;
 		
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", null, false);
-		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png", null);
+		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false, "/sounds/theme_IF.wav", Clip.LOOP_CONTINUOUSLY);
+		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png", null, 0);
 		manager = new PlataformMananger();
 	}
 	
@@ -48,5 +50,10 @@ public class Game3 extends Scene
 		g2d.drawString("Tempo Restante: " + (int)(maxTime - time), 10, 30);
 		g2d.drawString("Speed: " + TimeXSpeedManager.speed, 400, 30);
 		g2d.drawString("Delay: " + (int)(TimeXSpeedManager.changeSpeedDelay - TimeXSpeedManager.time), 730, 30);
+	}
+	
+	public void stopBGSound()
+	{
+		background.clip.stop();
 	}
 }
