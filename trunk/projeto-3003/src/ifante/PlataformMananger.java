@@ -20,12 +20,12 @@ public class PlataformMananger
 		platWidth = 150;
 		platHeight = 50;
 		
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 4; i++)
 		{
 			if (i == 0)
-				this.objetos.add(new Plataform(400 - platWidth / 2, 200, platWidth, platHeight, "/images/platforma_curva.png", null, 0));
+				this.objetos.add(new Plataform(400 - platWidth / 2, 150, platWidth, platHeight, "/images/platforma_curva.png", null, 0));
 			else
-				this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 200 + (i * 150), platWidth, platHeight, "/images/platforma_curva.png", null, 0));
+				this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 150 + (i * 150), platWidth, platHeight, "/images/platforma_curva.png", null, 0));
 		}
 	}
 	
@@ -48,23 +48,17 @@ public class PlataformMananger
 			if (objetos.get(i).y + objetos.get(i).h < 0)
 			{
 				objetos.remove(objetos.get(i));
-				AdicionarPlataforma();
 				i--;
 			}
 		}
+		
+		if (objetos.getLast().y <= 450)
+			AdicionarPlataforma();
 	}
 	
 	
 	public void Draw(Graphics2D g2d) 
-	{
-		/*for(int i = 0; i < objetos.size(); i++)
-		{
-			((Plataform)objetos.get(i)).Draw(g2d);
-		}*/
-		
-		//if (!objetos.isEmpty())
-		//	objetos.get(0).Draw(g2d);
-		
+	{	
 		for (Plataform p : objetos)
 		{
 			p.Draw(g2d);
