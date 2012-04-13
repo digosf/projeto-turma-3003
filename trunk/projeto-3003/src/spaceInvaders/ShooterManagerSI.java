@@ -2,6 +2,7 @@ package spaceInvaders;
 import game.Collision;
 import game.Game1;
 import game.Keyboard;
+import game.SoundClip;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -15,6 +16,7 @@ public class ShooterManagerSI
 	EnemyShotSI enemyShot;
 	int time;
 	int timeReaming;
+	SoundClip shootSI;
 	
 	public ShooterManagerSI()
 	{
@@ -24,28 +26,14 @@ public class ShooterManagerSI
 	
 	public void Update()
 	{
-		/*time++;
-		if(time > timeReaming)
-		{
-			time = 0;
-			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX(), (float)PlayerSI.getPosition().getY(), 10,10, "/images/tiro_inimigo.png", null ));
-		}*/
 		time++;
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE) && time >= 30)
 		{
-			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX() + 35, (float)PlayerSI.getPosition().getY(), 10,10, "/images/tiro_inimigo.png", "/sounds/shoot_SI.wav", 0));
+			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX() + 35, (float)PlayerSI.getPosition().getY(), 10,10, "/images/tiro_inimigo.png"));
+			shootSI = new SoundClip("/sounds/shoot_SI.wav", 0);
 			time = 0;
 		}
 		
-		/*for(int i = 0; i < shotSI.size(); i++)
-		{
-			shotSI.get(i).Update();
-			
-			if(Collision.CheckCollision(shotSI.get(i), enemyShot) == true)
-			{
-				shotSI.remove(i);//remover o item da lista	
-			}
-		}*/
 		for (Shot s : shotSI)
 		{
 			s.Update();

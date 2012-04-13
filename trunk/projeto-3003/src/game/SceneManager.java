@@ -1,13 +1,8 @@
 package game;
 
 
-import java.applet.Applet;
-import java.applet.AudioClip;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
-
-import javax.sound.sampled.*;
-import javax.sound.sampled.spi.AudioFileReader;
 
 public class SceneManager 
 {
@@ -24,7 +19,8 @@ public class SceneManager
 	}
 	
 	public static void changeScene(int openingScene)
-	{	
+	{
+		SoundClip.StopAll();
 		switch (currentScene)
 		{
 			case LOGO:
@@ -161,9 +157,9 @@ public class SceneManager
 		
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ESCAPE))
 		{
-			scene.StopBGSound();
 			scene = new Opening();
 			currentScene = SCENE.OPENING;
+			SoundClip.StopAll();
 		}
 		
 	}

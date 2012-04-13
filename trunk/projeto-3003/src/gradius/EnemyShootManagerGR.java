@@ -15,6 +15,8 @@ public class EnemyShootManagerGR
 	float timer = 0;
 	float timerRemaining;
 	
+	SoundClip shootGR;
+	
 	public EnemyShootManagerGR()
 	{
 	}
@@ -23,7 +25,8 @@ public class EnemyShootManagerGR
 	{
 		EnemyGR enemy = EnemyManagerGR.listEnemy.get(random.nextInt(EnemyManagerGR.listEnemy.size()));
 		
-		shootEnemyList.add(new EnemyShootGR(enemy.x, enemy.y, enemy.w, enemy.h,"IMAGEM", "/sounds/shoot_GR.wav", 0));
+		shootEnemyList.add(new EnemyShootGR(enemy.x, enemy.y, enemy.w, enemy.h,"IMAGEM"));
+		shootGR = new SoundClip("/sounds/shoot_GR.wav", 0);
 	}
 	
 	public void Update()

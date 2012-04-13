@@ -2,6 +2,7 @@ package gradius;
 
 import game.Collision;
 import game.Game2;
+import game.SoundClip;
 
 import java.awt.Graphics2D;
 import java.util.LinkedList;
@@ -11,6 +12,8 @@ public class FriendlyShotManagerGR {
 	public static LinkedList<ShootFriendGR> ShootFriendList = new LinkedList<ShootFriendGR>();
 	
 	static int contador = 0;
+	
+	static SoundClip shootGR;
 
 	public FriendlyShotManagerGR()
 	{
@@ -48,10 +51,11 @@ public class FriendlyShotManagerGR {
 	public static void Fire()
 	{
 		ShootFriendGR shoot = new ShootFriendGR((float)Game2.player.x,(float)Game2.player.y + 15,
-				20,10,"/images/tiro_player.png", "/sounds/shoot_GR.wav", 0);
+				20,10,"/images/tiro_player.png");
 		if(contador >= 30)
 		{
 			ShootFriendList.add(shoot);
+			shootGR = new SoundClip("/sounds/shoot_GR.wav", 0);
 			contador = 0;
 		}
 	}

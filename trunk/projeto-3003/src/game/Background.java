@@ -8,9 +8,9 @@ public class Background extends GameObject{
 			
 	boolean parallax;
 	
-	public Background(float x, float y, int w, int h, String image, boolean parallax, String sound, int soundLoop)
+	public Background(float x, float y, int w, int h, String image, boolean parallax)
 	{
-		 super(x, y, w, h, image, sound, soundLoop );
+		 super(x, y, w, h, image);
 		 this.parallax = parallax;
 	}
 	

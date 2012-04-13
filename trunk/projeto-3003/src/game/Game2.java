@@ -14,12 +14,14 @@ public class Game2 extends Scene {
 	static public PlayerGR player;
 	public static EnemyManagerGR enemyManagerGR;
 	int i;
+	SoundClip bgSound;
 	
 	public Game2()
 	{
-		background = new Background(0, 0, 800, 600, "/images/GradiusFundo.jpg", true, "/sounds/theme_GR.wav", Clip.LOOP_CONTINUOUSLY);
-		player = new PlayerGR(10,300, 100, 30, "/images/player.png", null, 0);
+		background = new Background(0, 0, 800, 600, "/images/GradiusFundo.jpg", true);
+		player = new PlayerGR(10,300, 100, 30, "/images/player.png");
 		enemyManagerGR = new EnemyManagerGR();
+		bgSound = new SoundClip("/sounds/theme_GR.wav", Clip.LOOP_CONTINUOUSLY);
  	}
 
 	@Override
@@ -44,10 +46,5 @@ public class Game2 extends Scene {
 		enemyManagerGR.Draw(g2d);
 		FriendlyShotManagerGR.Draw(g2d);
 		player.Draw(g2d);
-	}
-	
-	public void StopBGSound()
-	{
-		background.clip.stop();
 	}
 }

@@ -46,6 +46,6 @@ public class FriendlyShotManager
 	
 	public static void Fire(PlayerGR player)
 	{
-		ShotFriendList.add(new ShotFriend(player.x, player.y, 20, 10, 10, "/sounds/shoot_GR.wav", 0));
+		ShotFriendList.add(new ShotFriend(player.x, player.y, 20, 10, 10));
 	}
 }

@@ -33,7 +33,7 @@ public class EnemyManagerGR
 			timer = 0;
 			for(int i = 0; i <rand.nextInt(4);i++)
 			{
-				listEnemy.add(new EnemyGR(800, rand.nextInt(600), 50,50, "/images/inimigos_2.png", null, 0));
+				listEnemy.add(new EnemyGR(800, rand.nextInt(600), 50,50, "/images/inimigos_2.png"));
 			}
 		}
 		

@@ -1,10 +1,8 @@
 package gradius;
 
-import game.Background;
 import game.GameObject;
 import game.Keyboard;
 import game.SceneManager;
-import game.SoundClip;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -12,21 +10,12 @@ import java.awt.event.KeyEvent;
 public class PlayerGR extends GameObject
 {
 	private final int speed = 2;
-	private int minX, minY, maxX, maxY;
 	public int life;
 	
-	public PlayerGR(float x, float y, int w, int h, String image, String sound, int soundLoop) 
+	public PlayerGR(float x, float y, int w, int h, String image) 
 	{
-		super(x, y, w, h, image, sound, soundLoop);
+		super(x, y, w, h, image);
 		life = 5;
-	}
-	
-	public void ChangeBounds(int minX, int maxX, int minY, int maxY)
-	{
-		this.minX = minX;
-		this.maxX = maxX;
-		this.minY = minY;
-		this.maxY = maxY;
 	}
 	
 	@Override

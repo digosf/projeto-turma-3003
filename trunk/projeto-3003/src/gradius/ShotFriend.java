@@ -8,9 +8,9 @@ class ShotFriend extends GameObject
 {  	
 	float speed;
 	
-	public ShotFriend (float x, float y, int w, int h, float speed, String sound, int soundLoop)
+	public ShotFriend (float x, float y, int w, int h, float speed)
 	{
-		super(x, y, w, h, "images/tiro_player.png", sound, soundLoop);
+		super(x, y, w, h, "images/tiro_player.png");
 		
 		this.speed = speed; //Add velocidade ao tiro
 	}

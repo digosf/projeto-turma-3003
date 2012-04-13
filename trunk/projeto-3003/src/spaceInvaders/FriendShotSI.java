@@ -1,14 +1,12 @@
 package spaceInvaders;
 
-import game.SoundClip;
-
 public class FriendShotSI extends Shot
 {
 	
 	//Alterado por felipe, nao descomente este codigo.
-	public FriendShotSI(float x, float y, int w, int h, String image, String sound, int soundLoop)
+	public FriendShotSI(float x, float y, int w, int h, String image)
 	{
-		super(x, y, w, h, image, sound, soundLoop);
+		super(x, y, w, h, image);
 		speedY = 3;
 	}
 	

@@ -20,16 +20,13 @@ public class EnemyManagerSI {
 	private static int sizeWidth = 40;
 	private static int sizeHeight = 40;
 	
-	private static SoundClip sound;
-	
 	boolean collision;
 	
-	public EnemyManagerSI(SoundClip sound)
+	public EnemyManagerSI()
 	{
 		collision = true;
 		this.speedX = 4;
 		this.speedY = 30;
-		EnemyManagerSI.sound = sound;
 		//listEnemy = new LinkedList<EnemySI>();
 		NewEnemy(8, 4);
 	}
@@ -99,8 +96,7 @@ public class EnemyManagerSI {
 											(y * (sizeHeight + 5)),
 											sizeWidth, 
 											sizeHeight,
-											"/images/inimigos_1.png",
-											null, 0));
+											"/images/inimigos_1.png"));
 			}
 		}
 	}

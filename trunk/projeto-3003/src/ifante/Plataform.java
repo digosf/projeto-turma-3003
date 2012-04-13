@@ -6,9 +6,8 @@ import game.TimeXSpeedManager;
 
 public class Plataform extends GameObject {
 	
-	public Plataform(float x, float y, int w, int h, String image,
-			String sound, int soundLoop) {
-		super(x, y, w, h, image, sound, soundLoop);
+	public Plataform(float x, float y, int w, int h, String image) {
+		super(x, y, w, h, image);
 
 		// TODO Auto-generated constructor stub
 	}

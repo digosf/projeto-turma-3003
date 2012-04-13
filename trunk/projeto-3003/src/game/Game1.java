@@ -22,13 +22,16 @@ public class Game1 extends Scene{
 	
 	ShooterManagerSI tiroAmigo;
 	
+	SoundClip bgSound;
+	
 	public Game1()
 	{	
 		player = new PlayerSI(new Point2D.Float(400 - 40,550),new Point2D.Float(80,40),"/images/personagemSpaceInvader.png");
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false, "/sounds/theme_SI.wav", Clip.LOOP_CONTINUOUSLY);
-		enemy = new EnemyManagerSI(null);
+		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false);
+		enemy = new EnemyManagerSI();
 		tiroInimigo = new EnemyShotManagerSI();
 		tiroAmigo = new ShooterManagerSI();
+		bgSound = new SoundClip("/sounds/theme_SI.wav", Clip.LOOP_CONTINUOUSLY);
 	}
 	
 	@Override
@@ -49,10 +52,5 @@ public class Game1 extends Scene{
 		enemy.draw(g2d);
 		tiroInimigo.draw(g2d);
 		tiroAmigo.Draw(g2d);
-	}
-	
-	public void StopBGSound()
-	{
-		background.clip.stop();
 	}
 }

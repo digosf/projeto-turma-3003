@@ -16,22 +16,23 @@ public class Game3 extends Scene
 	final float maxTime = 60;
 	float time;
 	
+	SoundClip bgSound;
+	
 	public Game3()
 	{
-		// nao e possivel carregar a imaem de fundo do pluemet, motivo desconhecido.
-		// motivo desconhecido = a imagem está corrompida.
 		TimeXSpeedManager.speed = 1;
 		TimeXSpeedManager.time = 0;
 		TimeXSpeedManager.changeSpeedDelay = 10f;
 		
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false, "/sounds/theme_IF.wav", Clip.LOOP_CONTINUOUSLY);
-		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png", null, 0);
+		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false);
+		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png");
 		manager = new PlataformMananger();
+		
+		bgSound = new SoundClip("/sounds/theme_IF.wav", Clip.LOOP_CONTINUOUSLY);
 	}
 	
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		TimeXSpeedManager.Update();
 		player.Update();
 		manager.Update(player);
@@ -50,10 +51,5 @@ public class Game3 extends Scene
 		g2d.drawString("Tempo Restante: " + (int)(maxTime - time), 10, 30);
 		g2d.drawString("Speed: " + TimeXSpeedManager.speed, 400, 30);
 		g2d.drawString("Delay: " + (int)(TimeXSpeedManager.changeSpeedDelay - TimeXSpeedManager.time), 730, 30);
-	}
-	
-	public void stopBGSound()
-	{
-		background.clip.stop();
 	}
 }

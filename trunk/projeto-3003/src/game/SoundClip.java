@@ -4,9 +4,11 @@ package game;
 import javax.sound.sampled.*;
 import java.io.*;
 import java.net.*;
+import java.util.LinkedList;
 
 public class SoundClip {
-    
+
+	static LinkedList<Clip> clipList = new LinkedList<Clip>();
     private AudioInputStream sample;
 
     private Clip clip;
@@ -24,10 +26,6 @@ public class SoundClip {
     public void setFilename(String _filename) { filename = _filename; }
     public String getFilename() { return filename; }
 
-    public boolean isLoaded() {
-        return (boolean)(sample != null);
-    }
-
     public SoundClip() {
         try {
             clip = AudioSystem.getClip();
@@ -35,9 +33,9 @@ public class SoundClip {
         } catch (LineUnavailableException e) { }
     }
 
-    public SoundClip(String filename, boolean IsLooping) {
+    public SoundClip(String filename, int loopCount) {
         this();
-        load(filename,IsLooping);
+        load(filename, loopCount);
     }
 
     private URL getURL(String filename) {
@@ -49,38 +47,32 @@ public class SoundClip {
         return url;
    }
 
-    public boolean load(String audiofile,boolean IsLooping) {
+    public void load(String audiofile, int loop) {
         try {
 
             setFilename(audiofile);
             sample = AudioSystem.getAudioInputStream(getURL(filename));
             clip.open(sample);
+            clip.loop(loop);
+            clip.start();
+            clipList.add(clip);
             
-            looping = IsLooping;
-            return true;
-
         } catch (IOException e) {
-            return false;
         } catch (UnsupportedAudioFileException e) {
-            return false;
         } catch (LineUnavailableException e) {
-            return false;
         }
-    }
-
-    public void play() {
-        if (!isLoaded()) return;
-
-        clip.setFramePosition(0);
-
-        if (looping)
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
-        else
-            clip.loop(repeat);
     }
 
     public void stop() {
         clip.stop();
+    }
+    
+    public static void StopAll()
+    {
+    	for (Clip clip: clipList)
+    		clip.stop();
+    	
+    	clipList.clear();
     }
 
 }
