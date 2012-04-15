@@ -66,7 +66,7 @@ public class EnemyShotManagerSI {
 	public void AdicionarTiro()
 	{
 		EnemySI enemy = EnemyManagerSI.listEnemy.get(rand.nextInt(EnemyManagerSI.listEnemy.size()));
-		shotList.add(new EnemyShotSI(enemy.x, enemy.y, 10, 10, "/images/tiro_inimigo.png"));
+		shotList.add(new EnemyShotSI(enemy.x, enemy.y, 10, 10, "/images/gr_tiroinimigo.png"));
 		shootSI = new SoundClip("/sounds/shoot_SI.wav", 0);
 	}
 }

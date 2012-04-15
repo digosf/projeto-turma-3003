@@ -23,9 +23,9 @@ public class PlataformMananger
 		for (int i = 0; i < 4; i++)
 		{
 			if (i == 0)
-				this.objetos.add(new Plataform(400 - platWidth / 2, 150, platWidth, platHeight, "/images/platforma_curva.png"));
+				this.objetos.add(new Plataform(400 - platWidth / 2, 150, platWidth, platHeight, "/images/if_plataforma.png"));
 			else
-				this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 150 + (i * 150), platWidth, platHeight, "/images/platforma_curva.png"));
+				this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 150 + (i * 150), platWidth, platHeight, "/images/if_plataforma.png"));
 		}
 	}
 	
@@ -68,6 +68,6 @@ public class PlataformMananger
 		
 	private void AdicionarPlataforma()
 	{
-		this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 600, platWidth, platHeight, "/images/platforma_curva.png"));
+		this.objetos.add(new Plataform(rand.nextInt(800 - platWidth), 600, platWidth, platHeight, "/images/if_plataforma.png"));
 	}
 }

@@ -96,7 +96,7 @@ public class EnemyManagerSI {
 											(y * (sizeHeight + 5)),
 											sizeWidth, 
 											sizeHeight,
-											"/images/inimigos_1.png"));
+											"/images/si_inimigo.png"));
 			}
 		}
 	}

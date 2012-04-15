@@ -26,8 +26,8 @@ public class Game1 extends Scene{
 	
 	public Game1()
 	{	
-		player = new PlayerSI(new Point2D.Float(400 - 40,550),new Point2D.Float(80,40),"/images/personagemSpaceInvader.png");
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false);
+		player = new PlayerSI(new Point2D.Float(400 - 40,550),new Point2D.Float(80,40),"/images/si_personagem.png");
+		background = new Background(0,0,800,600, "/images/si_background.png", false);
 		enemy = new EnemyManagerSI();
 		tiroInimigo = new EnemyShotManagerSI();
 		tiroAmigo = new ShooterManagerSI();

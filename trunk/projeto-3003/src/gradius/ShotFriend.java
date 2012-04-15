@@ -10,7 +10,7 @@ class ShotFriend extends GameObject
 	
 	public ShotFriend (float x, float y, int w, int h, float speed)
 	{
-		super(x, y, w, h, "images/tiro_player.png");
+		super(x, y, w, h, "images/gr_tiroplayer.png");
 		
 		this.speed = speed; //Add velocidade ao tiro
 	}

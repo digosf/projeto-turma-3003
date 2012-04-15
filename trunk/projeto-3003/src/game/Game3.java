@@ -24,8 +24,8 @@ public class Game3 extends Scene
 		TimeXSpeedManager.time = 0;
 		TimeXSpeedManager.changeSpeedDelay = 10f;
 		
-		background = new Background(0,0,800,600, "/images/SpaceInvaderFundo.jpg", false);
-		player = new PlayerIfante(375, 0, 50, 100, "/images/PersonagemPlumet.png");
+		background = new Background(0,0,800,600, "/images/si_background.png", false);
+		player = new PlayerIfante(375, 0, 50, 100, "/images/if_personagem.png");
 		manager = new PlataformMananger();
 		
 		bgSound = new SoundClip("/sounds/theme_IF.wav", Clip.LOOP_CONTINUOUSLY);

@@ -29,7 +29,7 @@ public class ShooterManagerSI
 		time++;
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE) && time >= 30)
 		{
-			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX() + 35, (float)PlayerSI.getPosition().getY(), 10,10, "/images/tiro_inimigo.png"));
+			shotSI.add(new FriendShotSI((float)PlayerSI.getPosition().getX() + 35, (float)PlayerSI.getPosition().getY(), 10,10, "/images/gr_tiroinimigo.png"));
 			shootSI = new SoundClip("/sounds/shoot_SI.wav", 0);
 			time = 0;
 		}

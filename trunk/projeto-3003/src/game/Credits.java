@@ -14,7 +14,7 @@ public class Credits extends Scene
 
 	public Credits()
 	{
-		background = new Background(0,0,800,2000, "/images/Creditos.png", false);
+		background = new Background(0,0,800,2000, "/images/credits.png", false);
 	}
 	
 	//@Overrride
