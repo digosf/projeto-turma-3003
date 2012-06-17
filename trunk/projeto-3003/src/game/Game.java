@@ -19,7 +19,7 @@ public class Game extends Applet implements Runnable
 	Graphics2D g2d;
 
 	Thread gameLoop;
-	Random rand = new Random();
+	public static Random rand = new Random();
 
 	public void init()
 	{
