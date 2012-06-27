@@ -1,0 +1,66 @@
+package hdg;
+
+import java.util.Random;
+
+class SceneManager
+{
+    static public SCENE currentScene;
+    static public Scene scene = null;
+    static Random rand = new Random();
+
+	static public void setup()
+	{
+		//SoundClip.getInstance().LoadSongs();
+		//Audios.getInstance().loadSongs();
+		
+		LoadImages.getInstance().Load();
+		SceneManager.scene = new Opening();
+		SceneManager.currentScene = SCENE.SCN_OPENING;	
+	}
+
+	static public void changeScene(int currentScene)
+	{
+		switch (currentScene)
+		{			
+			case 0:
+				SceneManager.scene = new Congratulations();
+				SceneManager.currentScene = SCENE.SCN_GAMEOVER;
+				break;
+			case 1:
+				SceneManager.scene = new Level_01();
+				SceneManager.currentScene = SCENE.SCN_LEVEL_01;
+				break;
+			case 2:
+				SceneManager.scene = new Level_02();
+				SceneManager.currentScene = SCENE.SCN_LEVEL_02;
+				break;
+			case 3:
+				SceneManager.scene = new Level_03();
+				SceneManager.currentScene = SCENE.SCN_LEVEL_03;
+				break;
+			case 4:
+				SceneManager.scene = new GameOver();
+				SceneManager.currentScene = SCENE.SCN_GAMEOVER;
+				break;
+
+			case 5:
+				SceneManager.scene = new Congratulations();
+				SceneManager.currentScene = SCENE.SCN_GAMEOVER;
+				break;
+			case 6:
+				SceneManager.scene = new Opening();
+				SceneManager.currentScene = SCENE.SCN_OPENING;
+				break;
+		}
+	}
+	
+	public static enum SCENE
+	{
+		SCN_OPENING,
+		SCN_LEVEL_01,
+		SCN_LEVEL_02,
+		SCN_LEVEL_03,
+		SCN_GAMEOVER,
+		SCN_CONGRATULATIONS,
+	}
+}

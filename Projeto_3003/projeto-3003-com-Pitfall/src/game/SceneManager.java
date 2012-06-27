@@ -1,6 +1,7 @@
 package game;
 
 import Pitfall.SceneManagerPF;
+import Hero.SceneManagerHR;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
@@ -63,6 +64,12 @@ public class SceneManager
 						currentScene = SCENE.GAME5_PF;
 						break;
 					}
+					case 5:
+					{
+						scene = SceneManagerHR.changeScene(4);
+						currentScene = SCENE.GAME6_HR;
+						break;
+					}
 				}
 				break;
 
@@ -99,7 +106,6 @@ public class SceneManager
 						scene.StopBGSound();
 						scene = new Congrats();
 						currentScene = SCENE.CONGRATS;
-						
 						break;
 					}
 					case 1:
@@ -203,6 +209,33 @@ public class SceneManager
 				}
 				break;
 				
+			case GAME6_HR:
+				switch(openingScene)
+				{
+					case 0:
+					{
+						scene.StopBGSound();
+						scene = new GameOver();
+						currentScene = SCENE.GAMEOVER;
+						break;
+					}
+					case 1:
+					{
+						scene.StopBGSound();
+						scene = new Congrats();
+						currentScene = SCENE.CONGRATS;
+						break;
+					}
+					default:
+					{
+						scene.StopBGSound();
+						scene = SceneManagerHR.changeScene(openingScene);
+						currentScene = SCENE.GAME6_HR;
+						break;
+					}
+				}
+				break;
+				
 			case GAMEOVER:
 				scene = new Credits();
 				currentScene = SCENE.CREDITS; 
@@ -251,6 +284,7 @@ public class SceneManager
 		GAME3_IF,
 		GAME4_MP,
 		GAME5_PF,
+		GAME6_HR,
 		GAMEOVER,
 		CONGRATS,
 		CREDITS,

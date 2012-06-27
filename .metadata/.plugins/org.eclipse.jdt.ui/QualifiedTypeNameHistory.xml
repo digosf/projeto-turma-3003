@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="game.Game"/>
+<fullyQualifiedTypeName name="game.Scene"/>
+<fullyQualifiedTypeName name="game.Time"/>
+<fullyQualifiedTypeName name="game.Keyboard"/>
+<fullyQualifiedTypeName name="game.SceneManager"/>
+</qualifiedTypeNameHistroy>
