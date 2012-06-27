@@ -1,0 +1,104 @@
+package Hero;
+/*package game;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.net.URL;
+import java.util.LinkedList;
+
+public class Audios
+{
+	private static Audios instance;
+	private LinkedList<AudioClip> clipList = new LinkedList<AudioClip>();
+	
+	
+	private int numClipList = 5;
+	
+	
+	
+	private LinkedList<Integer> ultimaReproducao = new LinkedList<Integer>();
+	
+	static String[] stSounds = new String[]
+	{
+		"/sounds/shoot_SI.wav", // 0 - som1
+		"/sounds/DisparoInimigo.wav",
+		"/sounds/DisparoPersonagem.wav",
+		"/sounds/OpeningWaveGames.wav",//3
+		"/sounds/inicio_level.wav",
+		"/sounds/homembomba.wav",//5 - h bomba
+		"/sounds/pegandoItem.wav",//6 - h bomba
+		"/sounds/Ambiente (1).wav",//7
+		"/sounds/Ambiente (2).wav",//8
+		"/sounds/Ambiente (3).wav",//9
+	};
+	
+		private Audios(){}
+		
+		static Audios getInstance()
+		{
+			if(instance==null)
+			{
+				instance = new Audios();
+				instance.loadSongs();
+			}
+			return instance;
+		}
+		public void loadSongs()
+		{
+			for(int i = 0; i< stSounds.length; i++)
+			{
+				for(int x = 0; x < this.numClipList; x++)
+				{
+					clipList.add(Applet.newAudioClip(getURL(stSounds[i])));
+				}
+				ultimaReproducao.add(0);
+			}
+		}
+		public void Play(int indexPlay)
+		{
+			try
+			{
+				
+				this.clipList.get((indexPlay*this.numClipList) + this.ultimaReproducao.get(indexPlay)).play();
+			}
+			catch(Exception e)
+			{
+				this.clipList.get((indexPlay*this.numClipList)+ this.ultimaReproducao.get(indexPlay)).play();
+			}
+			
+			this.ultimaReproducao.set(indexPlay, this.ultimaReproducao.get(indexPlay) + 1);
+			if(this.ultimaReproducao.get(indexPlay) == this.numClipList)
+				this.ultimaReproducao.set(indexPlay, 0);
+				
+		}
+		
+		public void Loop(int indexPlay)
+		{
+			clipList.get((indexPlay*this.numClipList)).loop();
+		}
+		
+		private URL getURL(String filename) {
+	        URL url = null;
+	        try {
+	            url = this.getClass().getResource(filename);
+	        }
+	        catch (Exception e) { }
+	        return url;
+	   }
+		
+		public void stopAll()
+		{
+			for(int i = 0; i< stSounds.length; i++)
+			{
+				try
+				{
+					clipList.get(i).stop();
+				}
+				catch(Exception e)
+				{
+					
+				}
+			}
+		}
+}
+*/

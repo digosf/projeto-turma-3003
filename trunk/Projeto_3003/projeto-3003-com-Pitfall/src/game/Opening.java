@@ -33,6 +33,10 @@ public class Opening extends Scene {
 		{
 			SceneManager.changeScene(4);
 		}
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_5))
+		{
+			SceneManager.changeScene(5);
+		}
 	}
 	@Override
 	public void draw(Graphics2D g2d) {
