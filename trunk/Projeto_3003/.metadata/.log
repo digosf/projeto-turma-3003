@@ -1,0 +1,88 @@
+!SESSION 2012-06-27 08:35:05.831 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_03
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.equinox.event 2 0 2012-06-27 08:35:07.344
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.2.0.v20100503 [971]
+]
+Component2: Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.2.100.v20110502 [456]
+]  
+!SESSION 2012-06-27 08:36:02.381 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_03
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.equinox.event 2 0 2012-06-27 08:36:03.925
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.2.0.v20100503 [971]
+]
+Component2: Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.2.100.v20110502 [456]
+]  
