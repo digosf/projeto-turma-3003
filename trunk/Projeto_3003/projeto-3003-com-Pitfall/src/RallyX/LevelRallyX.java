@@ -5,52 +5,66 @@ import game.Scene;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.geom.Point2D;
+import java.util.LinkedList;
 
 public class LevelRallyX extends SceneRallyX{
 
-	int [][] tiles = new int[][]{
-			{0,1,2},
-			{2,1,0}
+	int [][] tiles = new int[][]
+	{
+			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
+			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
+			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
+			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
+			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
+			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
+			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
+			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
+			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1}
 	};
-	int lines = 2;
-	int cols = 3;
 	
-	TileRallyX chao = new TileRallyX(0, 0, 15, 15, "/images/Logo.png");
-	TileRallyX grama = new TileRallyX(0, 0, 15, 15, "/images/Logo.png");
+	BackgroundRallyX background = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/Parte_estrada.png");
+	
+	int lines = 9;
+	int cols = 12;
+	
+	LinkedList<TileRallyX> tilesImg = new LinkedList<TileRallyX>();
 	
 	public LevelRallyX()
-	{
-		
-	}
-	
-	@Override
-	public void update() 
-	{
-		
-	}
-
-	@Override
-	public void draw(Graphics2D g2d) 
 	{
 		for (int i = 0; i < lines; i++)
 		{
 			for (int j = 0; j < cols; j++)
 			{
-				if (tiles[j][i] == 0)
+				if (tiles[i][j] == 0)
 				{
-					chao.Draw(g2d);
+					tilesImg.add(new TileRallyX(j* 30, i*30, 30, 30, "/ImagesRallyX/Parte_estrada.png"));
 				}
 				
-				if (tiles[j][i] == 1)
+				if (tiles[i][j] == 1)
 				{
-					chao.Draw(g2d);
-				}
-				
-				if (tiles[j][i] == 2)
-				{
-					chao.Draw(g2d);
+					tilesImg.add(new TileRallyX(j*30, i*30, 30, 30, "/ImagesRallyX/Parte_meio.png"));
 				}
 			}
+		}
+	}
+	
+	@Override
+	public void update() 
+	{
+		System.out.println("to no joooooogo");
+//		for(TileRallyX obj : tilesImg)
+//		{
+//			obj.x += 5;
+//		}
+	}
+
+	@Override
+	public void draw(Graphics2D g2d) 
+	{
+		background.Draw(g2d);
+		for(TileRallyX obj : tilesImg)
+		{
+			obj.Draw(g2d);
 		}
 	}
 }

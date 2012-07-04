@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 
 public class MenuRallyX extends SceneRallyX{
 		int count;
-		BackgroundRallyX back = new BackgroundRallyX(0, 0, 800, 600, "/images/fundo_azul.png");
+		BackgroundRallyX back = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/tela_start.png");
 		
 		@Override
 		public void update()
