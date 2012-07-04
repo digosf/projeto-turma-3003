@@ -6,10 +6,13 @@ import java.awt.Graphics2D;
 
 public class TileRallyX extends GameObject
 {
-
-	public TileRallyX(float x, float y, int w, int h, String image) {
+	int i;
+	int j;
+	
+	public TileRallyX(float x, float y, int w, int h, String image, int i, int j) {
 		super(x, y, w, h, image);
-		// TODO Auto-generated constructor stub
+		i = this.i;
+		j = this.j;
 	}
 	
 	public void Update()
