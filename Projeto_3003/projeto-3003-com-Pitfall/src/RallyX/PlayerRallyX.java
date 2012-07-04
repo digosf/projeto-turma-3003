@@ -15,6 +15,12 @@ public class PlayerRallyX extends GameObjectRallyX
 	
 	public void update(TileManagerRallyX map)
 	{
+		
+		i = (int)TileManagerRallyX.carPosition.getX()/(int)TileManagerRallyX.sizeTile;
+
+		j = (int)TileManagerRallyX.carPosition.getY()/(int)TileManagerRallyX.sizeTile;
+		
+		System.out.println("i: " + i + " j: " + j);
 		//this.i = map.tilesImg[]
 	}
 }
