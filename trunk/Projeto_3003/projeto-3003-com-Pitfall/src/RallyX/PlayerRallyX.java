@@ -8,6 +8,9 @@ public class PlayerRallyX extends GameObjectRallyX
 {
 	TileManagerRallyX map;
 	
+	int i;
+	int j;
+	
 	public PlayerRallyX(float x, float y, int w, int h, String image, TileManagerRallyX map) {
 		super(x, y, w, h, image);
 		map = this.map;
