@@ -13,8 +13,8 @@ public class LevelRallyX extends SceneRallyX{
 	
 	public LevelRallyX()
 	{
-		map = new TileManagerRallyX();
 		car = new PlayerRallyX(7*50, 10*50, 50, 50, "/ImagesRallyX/carro_amarelo.png");
+		map = new TileManagerRallyX(car);
 		clouds = new CloudManager(new Point2D.Double(car.x, car.y));
 	}
 	
