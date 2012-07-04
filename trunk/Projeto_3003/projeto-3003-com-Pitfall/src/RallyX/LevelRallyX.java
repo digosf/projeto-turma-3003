@@ -14,7 +14,7 @@ public class LevelRallyX extends SceneRallyX{
 	public LevelRallyX()
 	{
 		map = new TileManagerRallyX();
-		car = new PlayerRallyX(7*30, 10*30, 30, 30, "/ImagesRallyX/tela_start.png", this.map);
+		car = new PlayerRallyX(7*50, 10*50, 50, 50, "/ImagesRallyX/carro_amarelo.png", this.map);
 		clouds = new CloudManager();
 	}
 	
