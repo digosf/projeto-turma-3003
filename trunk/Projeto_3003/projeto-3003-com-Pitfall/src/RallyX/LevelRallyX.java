@@ -9,62 +9,30 @@ import java.util.LinkedList;
 
 public class LevelRallyX extends SceneRallyX{
 
-	int [][] tiles = new int[][]
-	{
-			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
-			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
-			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
-			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
-			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
-			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
-			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
-			{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0},
-			{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1}
-	};
+	TileManagerRallyX map;
+	PlayerRallyX car;
 	
 	BackgroundRallyX background = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/Parte_estrada.png");
 	
-	int lines = 9;
-	int cols = 12;
-	
-	LinkedList<TileRallyX> tilesImg = new LinkedList<TileRallyX>();
-	
 	public LevelRallyX()
 	{
-		for (int i = 0; i < lines; i++)
-		{
-			for (int j = 0; j < cols; j++)
-			{
-				if (tiles[i][j] == 0)
-				{
-					tilesImg.add(new TileRallyX(j* 30, i*30, 30, 30, "/ImagesRallyX/Parte_estrada.png"));
-				}
-				
-				if (tiles[i][j] == 1)
-				{
-					tilesImg.add(new TileRallyX(j*30, i*30, 30, 30, "/ImagesRallyX/Parte_meio.png"));
-				}
-			}
-		}
+		map = new TileManagerRallyX();
+		car = new PlayerRallyX(0, 0, 30, 30, "/ImagesRallyX/tela_start.png", this.map);
 	}
 	
 	@Override
 	public void update() 
 	{
-		System.out.println("to no joooooogo");
-//		for(TileRallyX obj : tilesImg)
-//		{
-//			obj.x += 5;
-//		}
+		System.out.println("Game");
+		
+		map.update();
+		car.update();
 	}
 
 	@Override
 	public void draw(Graphics2D g2d) 
 	{
 		background.Draw(g2d);
-		for(TileRallyX obj : tilesImg)
-		{
-			obj.Draw(g2d);
-		}
+		map.Draw(g2d);
 	}
 }
