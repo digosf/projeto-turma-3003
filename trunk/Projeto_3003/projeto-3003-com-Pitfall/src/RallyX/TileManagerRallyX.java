@@ -93,7 +93,7 @@ public class TileManagerRallyX
 	{
 		carPosition = new Point2D.Double(car.x,car.y);
 		
-		velocityMapMove = 4;
+		velocityMapMove = 3;
 		currentDirection = DIRECTION_RX.RIGHT;
 		
 		for (int i = 0; i < lines; i++)
@@ -164,19 +164,19 @@ public class TileManagerRallyX
 		{
 			case UP:
 				//System.out.println("UP");
-				MoveMap();
+				MoveMap(car);
 				break;
 			case DOWN:
 				//System.out.println("DOWN");
-				MoveMap();
+				MoveMap(car);
 				break;
 			case LEFT:
 				//System.out.println("LEFT");
-				MoveMap();
+				MoveMap(car);
 				break;
 			case RIGHT:
 				//System.out.println("RIGHT");
-				MoveMap();
+				MoveMap(car);
 				break;			
 		}
 		
@@ -191,30 +191,34 @@ public class TileManagerRallyX
 		}
 	}
 	
-	public void MoveMap()
+	public void MoveMap(PlayerRallyX car)
 	{
 		switch (currentDirection)
 		{
 		case UP:
-			for(TileRallyX obj : tilesImg)
+			
+			if (tiles[car.i+1][car.j] == 22)
 			{
-				obj.y += velocityMapMove;
+				for(TileRallyX obj : tilesImg)
+					obj.y += velocityMapMove;
+				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove) ;
 			}
-			carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove) ;
 			break;
 		case DOWN:
-			for(TileRallyX obj : tilesImg)
+			if (tiles[car.i-1][car.j] == 22)
 			{
-				obj.y -= velocityMapMove;
+				for(TileRallyX obj : tilesImg)
+					obj.y -= velocityMapMove;
+				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove) ;
 			}
-			carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove) ;
 			break;
 		case LEFT:
-			for(TileRallyX obj : tilesImg)
+			if (tiles[car.i][car.j] == 22)
 			{
-				obj.x += velocityMapMove;
+				for(TileRallyX obj : tilesImg)
+					obj.x += velocityMapMove;
+				carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove, carPosition.getY()) ;
 			}
-			carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove, carPosition.getY()) ;
 			break;
 		case RIGHT:
 			for(TileRallyX obj : tilesImg)
