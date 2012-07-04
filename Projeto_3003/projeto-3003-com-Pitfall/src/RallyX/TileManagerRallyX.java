@@ -84,7 +84,7 @@ public class TileManagerRallyX
 	int lines = 60;
 	int cols = 40;
 	
-	int velocityMapMove;
+	static int velocityMapMove;
 	
 	float sizeTile = 50;
 	

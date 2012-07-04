@@ -9,21 +9,28 @@ import java.util.LinkedList;
 
 public class CloudManager {
 	static LinkedList<Cloud> listClouds = new LinkedList<Cloud>();
+	int countCreate;
 	public CloudManager()
 	{		
 	}
 	public void Update()
 	{
-		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE))
+		countCreate++;
+		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE) && countCreate >= 12)
 		{
-			//Cloud a = new Cloud(LevelRallyX.player.x, LevelRallyX.player.y, 30, 30, null);
-			Cloud a = new Cloud(400, 300, 30, 30, "/ImagesRallyX/fumaça.png");
+			countCreate = 0 ;
+			Cloud a = new Cloud(7*30, 10*30, 30, 30, "/ImagesRallyX/fumaça.png");
+			//Cloud a = new Cloud(400, 300, 30, 30, "/ImagesRallyX/fumaça.png");
 			listClouds.add(a);
 			System.out.println("nuvem");
 		}
-		if(listClouds.size() > 2)
+		if(listClouds.size() > 3)
 		{
 			listClouds.remove(0);
+		}
+		for(Cloud a : listClouds)
+		{
+			a.Update();
 		}
 	}
 	public void draw(Graphics2D g)
