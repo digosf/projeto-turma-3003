@@ -1,5 +1,7 @@
 package RallyX;
 
+import game.Scene;
+
 import java.awt.Graphics2D;
 
 public class LevelRallyX extends SceneRallyX{
