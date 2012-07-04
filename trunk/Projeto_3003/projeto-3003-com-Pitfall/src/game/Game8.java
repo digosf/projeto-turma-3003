@@ -12,11 +12,11 @@ public class Game8 extends Scene{
 
 	
 	public static SceneRallyX sceneRx;
-	private static SCENE currentScene = SCENE.Level1;
+	public static SCENE currentScene = SCENE.INSTRUCTION;
 	
 	public Game8()
 	{
-		sceneRx = new InstructionsRallyX();
+		changeScene();
 	}
 	
 	@Override
@@ -35,19 +35,19 @@ public class Game8 extends Scene{
 			
 			switch (currentScene)
 			{
-				case Level1:
+				case INSTRUCTION :
 					sceneRx = new InstructionsRallyX();
-					currentScene = SCENE.INSTRUCTION;
-					break;
-				case INSTRUCTION:
-					sceneRx = new MenuRallyX();
 					currentScene = SCENE.PreGame;
 					break;
-				
 				case PreGame:
+					sceneRx = new MenuRallyX();
+					currentScene = SCENE.Level1;
+					break;
+				
+				case Level1 :
 				{
 					sceneRx = new LevelRallyX();
-					currentScene = SCENE.Level1;
+					currentScene = SCENE.INSTRUCTION;
 					break;
 					
 				}	
