@@ -11,50 +11,52 @@ import RallyX.SceneRallyX;
 public class Game8 extends Scene{
 
 	
-	public static SceneRallyX scene;
-	private static SCENE currentScene = SCENE.INSTRUCTION;
+	public static SceneRallyX sceneRx;
+	private static SCENE currentScene = SCENE.Level1;
+	
+	public Game8()
+	{
+		sceneRx = new InstructionsRallyX();
+	}
 	
 	@Override
 	public void update() {
-		
+		// TODO Auto-generated method stub
+		sceneRx.update();
 	}
 
 	@Override
 	public void draw(Graphics2D g2d) {
 		// TODO Auto-generated method stub
-		
+		sceneRx.draw(g2d);
 	}
-	public SceneRallyX changeScene()
+	public static SceneRallyX changeScene()
 	{
 			
 			switch (currentScene)
 			{
+				case Level1:
+					sceneRx = new InstructionsRallyX();
+					currentScene = SCENE.INSTRUCTION;
+					break;
 				case INSTRUCTION:
-					scene = new InstructionsRallyX();
+					sceneRx = new MenuRallyX();
 					currentScene = SCENE.PreGame;
 					break;
-				case PreGame:
-					scene = new MenuRallyX();
-					currentScene = SCENE.Level1;
-					break;
 				
-				case Level1:
+				case PreGame:
 				{
-					scene = new LevelRallyX();
+					sceneRx = new LevelRallyX();
 					currentScene = SCENE.Level1;
 					break;
+					
 				}	
 			}
-			return scene;
-		
-	
-		
-		
+			return sceneRx;
 	}
 	
 	enum SCENE
 	{
-		
 		INSTRUCTION,
 		PreGame,
 		Level1,
