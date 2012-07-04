@@ -70,6 +70,12 @@ public class SceneManager
 						currentScene = SCENE.GAME6_HR;
 						break;
 					}
+					case 8:
+					{
+						scene = new Game8();
+						currentScene = SCENE.GAME8_RX;
+						break;
+					}
 				}
 				break;
 
@@ -285,6 +291,7 @@ public class SceneManager
 		GAME4_MP,
 		GAME5_PF,
 		GAME6_HR,
+		GAME8_RX,
 		GAMEOVER,
 		CONGRATS,
 		CREDITS,
