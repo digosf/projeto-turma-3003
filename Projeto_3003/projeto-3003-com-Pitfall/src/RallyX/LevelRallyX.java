@@ -9,19 +9,19 @@ public class LevelRallyX extends SceneRallyX{
 	TileManagerRallyX map;
 	PlayerRallyX car;
 	
-	BackgroundRallyX background = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/Parte_estrada.png");
+	BackgroundRallyX background = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/tela_start.png");
 	
 	public LevelRallyX()
 	{
 		map = new TileManagerRallyX();
-		car = new PlayerRallyX(0, 0, 30, 30, "/ImagesRallyX/tela_start.png", this.map);
+		car = new PlayerRallyX(7*30, 10*30, 30, 30, "/ImagesRallyX/tela_start.png", this.map);
 		clouds = new CloudManager();
 	}
 	
 	@Override
 	public void update() 
 	{
-		System.out.println("Game");
+		//System.out.println("Game");
 		
 		map.update();
 		car.update();
@@ -33,6 +33,7 @@ public class LevelRallyX extends SceneRallyX{
 	{
 		background.Draw(g2d);
 		map.Draw(g2d);
+		car.Draw(g2d);
 		clouds.draw(g2d);
 	}
 }
