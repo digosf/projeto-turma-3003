@@ -1,14 +1,11 @@
 package RallyX;
 
-import game.Scene;
 
 import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.geom.Point2D;
 import java.util.LinkedList;
 
 public class LevelRallyX extends SceneRallyX{
-
+	CloudManager clouds;
 	TileManagerRallyX map;
 	PlayerRallyX car;
 	
@@ -18,6 +15,7 @@ public class LevelRallyX extends SceneRallyX{
 	{
 		map = new TileManagerRallyX();
 		car = new PlayerRallyX(0, 0, 30, 30, "/ImagesRallyX/tela_start.png", this.map);
+		clouds = new CloudManager();
 	}
 	
 	@Override
@@ -27,6 +25,7 @@ public class LevelRallyX extends SceneRallyX{
 		
 		map.update();
 		car.update();
+		clouds.Update();
 	}
 
 	@Override
@@ -34,5 +33,6 @@ public class LevelRallyX extends SceneRallyX{
 	{
 		background.Draw(g2d);
 		map.Draw(g2d);
+		clouds.draw(g2d);
 	}
 }

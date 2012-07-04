@@ -3,7 +3,6 @@ package RallyX;
 import game.GameObject;
 
 import java.awt.Graphics2D;
-import javax.sound.sampled.Clip;
 
 public class TileRallyX extends GameObject
 {

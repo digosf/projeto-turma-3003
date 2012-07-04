@@ -2,7 +2,6 @@ package RallyX;
 
 import game.Game8;
 import game.Keyboard;
-import game.Scene;
 
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
