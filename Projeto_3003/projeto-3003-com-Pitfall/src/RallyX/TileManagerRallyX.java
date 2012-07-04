@@ -87,13 +87,15 @@ public class TileManagerRallyX
 	
 	static float sizeTile = 50;
 	
+	public int temp;
+	
 	LinkedList<TileRallyX> tilesImg = new LinkedList<TileRallyX>();
 	
 	public TileManagerRallyX(PlayerRallyX car)
 	{
 		carPosition = new Point2D.Double(car.x,car.y);
 		
-		velocityMapMove = 3;
+		velocityMapMove = 5;
 		currentDirection = DIRECTION_RX.RIGHT;
 		
 		for (int i = 0; i < lines; i++)
@@ -156,6 +158,7 @@ public class TileManagerRallyX
 			}
 		}
 	}
+	
 	public void update(PlayerRallyX car) 
 	{
 //		carPosition = new Point2D.Double(car.x, car.y);
@@ -201,7 +204,14 @@ public class TileManagerRallyX
 			{
 				for(TileRallyX obj : tilesImg)
 					obj.y += velocityMapMove;
-				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove) ;
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove);
+					temp = 0;
+				}
 			}
 			break;
 		case DOWN:
@@ -209,23 +219,46 @@ public class TileManagerRallyX
 			{
 				for(TileRallyX obj : tilesImg)
 					obj.y -= velocityMapMove;
-				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove) ;
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove);
+					temp = 0;
+				}
 			}
 			break;
 		case LEFT:
-			if (tiles[car.i][car.j] == 22)
+			if (tiles[car.i][car.j-1] == 22)
 			{
 				for(TileRallyX obj : tilesImg)
 					obj.x += velocityMapMove;
-				carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove, carPosition.getY()) ;
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove, carPosition.getY());
+					temp = 0;
+				}
 			}
 			break;
 		case RIGHT:
-			for(TileRallyX obj : tilesImg)
+			if (tiles[car.i][car.j=1] == 22)
 			{
-				obj.x -= velocityMapMove;
+				for(TileRallyX obj : tilesImg)
+					obj.x -= velocityMapMove;
+
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove, carPosition.getY());
+					temp = 0;
+				}
 			}
-			carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove, carPosition.getY()) ;
 			break;
 		}
 		//System.out.println("x: " + carPosition.getX() + " y: " + carPosition.getY());
@@ -236,7 +269,7 @@ public class TileManagerRallyX
 		if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_UP))
         {
             //MoveMap();
-			if (tiles[car.i+1][car.j] == 22)
+			if (tiles[car.i+1][car.j] == 22 && (temp == 0 || temp == 10))
 				currentDirection = DIRECTION_RX.UP;
 			
         }
@@ -244,21 +277,21 @@ public class TileManagerRallyX
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN))
         {
             //MoveMap();
-        	if (tiles[car.i-1][car.j] == 22)
+        	if (tiles[car.i-1][car.j] == 22 && (temp == 0 || temp == 10))
         		currentDirection = DIRECTION_RX.DOWN;
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_LEFT))
         {
             //MoveMap();
-        	if (tiles[car.i][car.j-1] == 22)
+        	if (tiles[car.i][car.j-1] == 22 && (temp == 0 || temp == 10))
         		currentDirection = DIRECTION_RX.LEFT;
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_RIGHT))
         {
             //MoveMap();
-        	if (tiles[car.i][car.j+1] == 22)
+        	if (tiles[car.i][car.j+1] == 22 && (temp == 0 || temp == 10))
         		currentDirection = DIRECTION_RX.RIGHT;
         }
 	}
