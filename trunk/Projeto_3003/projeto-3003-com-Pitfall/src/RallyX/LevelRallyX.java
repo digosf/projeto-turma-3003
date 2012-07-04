@@ -2,12 +2,11 @@ package RallyX;
 
 
 import java.awt.Graphics2D;
-import java.util.LinkedList;
 
 public class LevelRallyX extends SceneRallyX{
 	CloudManager clouds;
 	TileManagerRallyX map;
-	PlayerRallyX car;
+	public PlayerRallyX car;
 	
 	BackgroundRallyX background = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/tela_start.png");
 	
