@@ -2,6 +2,7 @@ package RallyX;
 
 
 import java.awt.Graphics2D;
+import java.awt.geom.Point2D;
 
 public class LevelRallyX extends SceneRallyX{
 	CloudManager clouds;
@@ -14,7 +15,7 @@ public class LevelRallyX extends SceneRallyX{
 	{
 		map = new TileManagerRallyX();
 		car = new PlayerRallyX(7*50, 10*50, 50, 50, "/ImagesRallyX/carro_amarelo.png", this.map);
-		clouds = new CloudManager();
+		clouds = new CloudManager(new Point2D.Double(car.x, car.y));
 	}
 	
 	@Override
