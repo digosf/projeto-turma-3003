@@ -9,7 +9,7 @@ import java.awt.Toolkit;
 import java.awt.geom.Point2D;
 import java.net.URL;
 
-abstract class GameObjectPF extends Applet
+public abstract class GameObjectPF
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -105,12 +105,12 @@ abstract class GameObjectPF extends Applet
 		
 		if(!animated)
 			g2d.drawImage(image, (int)this.position.getX(), (int)this.position.getY(), 
-					(int)this.dimension.getX(), (int)this.dimension.getY(), this);
+					(int)this.dimension.getX(), (int)this.dimension.getY(), null);
 		
 		else
 			g2d.drawImage(image,(int)this.position.getX(),(int)this.position.getY(),this.dimension.x + (int)this.position.getX(),
 						this.dimension.y + (int)this.position.getY(), this.sPos.x, this.sPos.y, 
-						this.sSize.x + this.sPos.x, this.sSize.y + this.sPos.y,  this);
+						this.sSize.x + this.sPos.x, this.sSize.y + this.sPos.y,  null);
 		
 		
 		//g2d.drawRect((int)this.getRectangle().getX(), (int)this.getRectangle().getY(), (int)this.getRectangle().getWidth(), (int)this.getRectangle().getWidth());

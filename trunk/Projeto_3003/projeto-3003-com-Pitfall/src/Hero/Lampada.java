@@ -16,12 +16,6 @@ public class Lampada extends AnimatedSprite
 	}
 	
 	@Override
-	public void update(Graphics g) 
-	{
-		super.update(g);
-	}
-	
-	@Override
 	public void draw(Graphics2D g2d) 
 	{
 		super.draw(g2d);

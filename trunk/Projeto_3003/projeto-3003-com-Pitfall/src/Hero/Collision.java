@@ -30,13 +30,13 @@ public class Collision {
     	
         UpdateRect(go1, go2);
         if(side == "left")
-        	result = (r1.intersects(r2) && (r1.x + r1.width) - (go1.getX() - oldPosX) - object2Speed <= r2.x);
+        	result = (r1.intersects(r2) && (r1.x + r1.width) - (go1.getPosition().getX() - oldPosX) - object2Speed <= r2.x);
         if(side == "top")
-        	result = (r1.intersects(r2) && r1.y + r1.height - (go1.getY() - oldPosY) - object2Speed <= r2.y);
+        	result = (r1.intersects(r2) && r1.y + r1.height - (go1.getPosition().getY() - oldPosY) - object2Speed <= r2.y);
         if(side == "right")
-    	   	result = (r1.intersects(r2) && r1.x + (oldPosX - go1.getX()) + object2Speed >= (r2.x + r2.width));
+    	   	result = (r1.intersects(r2) && r1.x + (oldPosX - go1.getPosition().getX()) + object2Speed >= (r2.x + r2.width));
         if(side == "bottom")
-        	result = (r1.intersects(r2) && r1.y + (oldPosY - go1.getY()) + object2Speed >= (r2.y + r2.height));
+        	result = (r1.intersects(r2) && r1.y + (oldPosY - go1.getPosition().getY()) + object2Speed >= (r2.y + r2.height));
         return result;
     }
     
@@ -56,8 +56,8 @@ public class Collision {
     //Atualiza os valores dos retângulos.
     private static void UpdateRect(GameObject go1, GameObject go2)
     {
-        r1 = new Rectangle((int)go1.getX(), (int)go1.getY(), go1.getWidth(), go1.getHeight());
-        r2 = new Rectangle((int)go2.getX(), (int)go2.getY(), go2.getWidth(), go2.getHeight());
+        r1 = new Rectangle((int)go1.getPosition().getX(), (int)go1.getPosition().getY(), (int)go1.getRectangle().getWidth(), (int)go1.getRectangle().getHeight());
+        r2 = new Rectangle((int)go2.getPosition().getX(), (int)go2.getPosition().getY(), (int)go2.getRectangle().getWidth(), (int)go2.getRectangle().getHeight());
     }
 }
 
