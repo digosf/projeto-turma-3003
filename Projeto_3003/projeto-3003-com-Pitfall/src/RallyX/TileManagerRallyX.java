@@ -100,7 +100,9 @@ public class TileManagerRallyX
 		carPosition = new Point2D.Double(car.x,car.y);
 		
 		velocityMapMove = 5;
+		
 		currentDirection = DIRECTION_RX.RIGHT;
+		nextDirection = DIRECTION_RX.NULL;
 		
 		for (int i = 0; i < lines; i++)
 		{
@@ -164,12 +166,7 @@ public class TileManagerRallyX
 	}
 	
 	public void update(PlayerRallyX car) 
-	{
-//		System.out.println("up: " + tiles[car.i][car.j+1] + 
-//						   ", down: " + tiles[car.i][car.j-1] +
-//						   ", left: " + tiles[car.i-1][car.j] +
-//						   ", right: " + tiles[car.i+1][car.j]);
-		
+	{	
 		switch (currentDirection)
 		{
 			case UP:
@@ -195,7 +192,8 @@ public class TileManagerRallyX
 				   ", down: " + tiles[car.j+1][car.i] +
 				   ", left: " + tiles[car.j][car.i-1] +
 				   ", right: " + tiles[car.j][car.i+1] +
-				   "    current: " + tiles[car.j][car.i]);
+				   "    current: " + tiles[car.j][car.i] +
+				   "    nextDirection: " + nextDirection);
 	}
 	
 	public void Draw(Graphics2D g2d) 
@@ -269,175 +267,6 @@ public class TileManagerRallyX
         }
 	}
 	
-	public void turnAutomatic(PlayerRallyX car)
-	{
-		switch (currentDirection)
-		{
-		case UP:
-			if (tiles[car.j][car.i-1] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x += velocityMapMove;
-				temp++;
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
-					temp = 0;
-				}
-			}
-			else if (tiles[car.j+1][car.i] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y -= velocityMapMove;
-				temp++;
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
-					temp = 0;
-				}
-			}
-			else
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x -= velocityMapMove;
-				temp++;
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
-					temp = 0;
-				}
-			}
-			break;
-		case DOWN:
-			if (tiles[car.j-1][car.i] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y += velocityMapMove;
-				temp++;
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
-					temp = 0;
-				}
-			}
-			else if (tiles[car.j][car.i-1] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x += velocityMapMove;
-				temp++;
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
-					temp = 0;
-				}
-			}
-			else
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x -= velocityMapMove;	
-				temp++;
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
-					temp = 0;
-				}
-			}
-			break;
-		case RIGHT:
-			if (tiles[car.j-1][car.i] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y += velocityMapMove;
-				
-				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove);
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
-					temp = 0;
-				}
-			}
-			else if (tiles[car.j+1][car.i] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y -= velocityMapMove;
-				
-				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove);
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
-					temp = 0;
-				}
-			}
-			else
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x += velocityMapMove;
-				
-				//carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove, carPosition.getY());
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
-					temp = 0;
-				}
-			}
-			break;
-		case LEFT:
-			if (tiles[car.j-1][car.i] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y += velocityMapMove;
-				
-				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove);
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
-					temp = 0;
-				}
-			}
-			else if (tiles[car.j+1][car.i] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y -= velocityMapMove;
-				
-				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove);
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
-					temp = 0;
-				}
-			}
-			else
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x -= velocityMapMove;
-
-				//carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove, carPosition.getY());
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
-					temp = 0;
-				}
-			}
-			break;
-		}
-	}
-	
 	public void verifyFront(PlayerRallyX car)
 	{
 		if (tiles[car.j-1][car.i] == 22)
@@ -451,6 +280,7 @@ public class TileManagerRallyX
 			{
 				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
 				temp = 0;
+				nextDirection = DIRECTION_RX.NULL;
 			}
 		}
 		else if (tiles[car.j][car.i-1] == 22)
