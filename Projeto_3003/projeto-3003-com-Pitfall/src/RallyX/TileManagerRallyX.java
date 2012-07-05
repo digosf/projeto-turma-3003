@@ -83,6 +83,9 @@ public class TileManagerRallyX
 	
 	static Point2D carPosition;
 	
+	int iCar;
+	int jCar;
+	
 	static Point2D mapPosition = new Point2D.Double(0,0);
 	
 	static float sizeTile = 50;
@@ -161,7 +164,10 @@ public class TileManagerRallyX
 	
 	public void update(PlayerRallyX car) 
 	{
-//		carPosition = new Point2D.Double(car.x, car.y);
+//		System.out.println("up: " + tiles[car.i][car.j+1] + 
+//						   ", down: " + tiles[car.i][car.j-1] +
+//						   ", left: " + tiles[car.i-1][car.j] +
+//						   ", right: " + tiles[car.i+1][car.j]);
 		
 		switch (currentDirection)
 		{
@@ -182,8 +188,13 @@ public class TileManagerRallyX
 				MoveMap(car);
 				break;			
 		}
-		
 		InputMap(car);
+		System.out.println(
+				   "up: " + tiles[car.j-1][car.i] + 
+				   ", down: " + tiles[car.j+1][car.i] +
+				   ", left: " + tiles[car.j][car.i-1] +
+				   ", right: " + tiles[car.j][car.i+1] +
+				   "    current: " + tiles[car.j][car.i]);
 	}
 	
 	public void Draw(Graphics2D g2d) 
@@ -199,66 +210,16 @@ public class TileManagerRallyX
 		switch (currentDirection)
 		{
 		case UP:
-			
-			if (tiles[car.i+1][car.j] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y += velocityMapMove;
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove);
-					temp = 0;
-				}
-			}
+			verifyFront(car);
 			break;
 		case DOWN:
-			if (tiles[car.i-1][car.j] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.y -= velocityMapMove;
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove);
-					temp = 0;
-				}
-			}
+			verifyBack(car);
 			break;
 		case LEFT:
-			if (tiles[car.i][car.j-1] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x += velocityMapMove;
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove, carPosition.getY());
-					temp = 0;
-				}
-			}
+			verifyLeft(car);
 			break;
 		case RIGHT:
-			if (tiles[car.i][car.j=1] == 22)
-			{
-				for(TileRallyX obj : tilesImg)
-					obj.x -= velocityMapMove;
-
-				
-				temp++;
-				
-				if (temp >= 10)
-				{
-					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove, carPosition.getY());
-					temp = 0;
-				}
-			}
+			verifyRight(car);
 			break;
 		}
 		//System.out.println("x: " + carPosition.getX() + " y: " + carPosition.getY());
@@ -268,32 +229,296 @@ public class TileManagerRallyX
 	{
 		if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_UP))
         {
-            //MoveMap();
-			if (tiles[car.i+1][car.j] == 22 && (temp == 0 || temp == 10))
+			if (tiles[car.j-1][car.i] == 22 && temp == 0)
+			{
 				currentDirection = DIRECTION_RX.UP;
-			
+			}
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN))
         {
-            //MoveMap();
-        	if (tiles[car.i-1][car.j] == 22 && (temp == 0 || temp == 10))
+        	if (tiles[car.j+1][car.i] == 22 && temp == 0)
+        	{
         		currentDirection = DIRECTION_RX.DOWN;
+        	}
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_LEFT))
         {
-            //MoveMap();
-        	if (tiles[car.i][car.j-1] == 22 && (temp == 0 || temp == 10))
+        	if (tiles[car.j][car.i-1] == 22 && temp == 0)
+        	{
         		currentDirection = DIRECTION_RX.LEFT;
+        	}
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_RIGHT))
         {
-            //MoveMap();
-        	if (tiles[car.i][car.j+1] == 22 && (temp == 0 || temp == 10))
+        	if (tiles[car.j][car.i+1] == 22 && temp == 0)
+        	{
         		currentDirection = DIRECTION_RX.RIGHT;
+        	}
         }
+	}
+	
+	public void turnAutomatic(PlayerRallyX car)
+	{
+		switch (currentDirection)
+		{
+		case UP:
+			if (tiles[car.j][car.i-1] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.x += velocityMapMove;
+				temp++;
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
+					temp = 0;
+				}
+			}
+			else if (tiles[car.j+1][car.i] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.y -= velocityMapMove;
+				temp++;
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
+					temp = 0;
+				}
+			}
+			else
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.x -= velocityMapMove;
+				temp++;
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
+					temp = 0;
+				}
+			}
+			break;
+		case DOWN:
+			if (tiles[car.j-1][car.i] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.y += velocityMapMove;
+				temp++;
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
+					temp = 0;
+				}
+			}
+			else if (tiles[car.j][car.i-1] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.x += velocityMapMove;
+				temp++;
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
+					temp = 0;
+				}
+			}
+			else
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.x -= velocityMapMove;	
+				temp++;
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
+					temp = 0;
+				}
+			}
+			break;
+		case RIGHT:
+			if (tiles[car.j-1][car.i] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.y += velocityMapMove;
+				
+				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove);
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
+					temp = 0;
+				}
+			}
+			else if (tiles[car.j+1][car.i] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.y -= velocityMapMove;
+				
+				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove);
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
+					temp = 0;
+				}
+			}
+			else
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.x += velocityMapMove;
+				
+				//carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove, carPosition.getY());
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
+					temp = 0;
+				}
+			}
+			break;
+		case LEFT:
+			if (tiles[car.j-1][car.i] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.y += velocityMapMove;
+				
+				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove);
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
+					temp = 0;
+				}
+			}
+			else if (tiles[car.j+1][car.i] == 22)
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.y -= velocityMapMove;
+				
+				//carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove);
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
+					temp = 0;
+				}
+			}
+			else
+			{
+				for(TileRallyX obj : tilesImg)
+					obj.x -= velocityMapMove;
+
+				//carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove, carPosition.getY());
+				
+				temp++;
+				
+				if (temp >= 10)
+				{
+					carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
+					temp = 0;
+				}
+			}
+			break;
+		}
+	}
+	
+	public void verifyFront(PlayerRallyX car)
+	{
+		if (tiles[car.j-1][car.i] == 22)
+		{
+			for(TileRallyX obj : tilesImg)
+				obj.y += velocityMapMove;
+			
+			temp++;
+			
+			if (temp >= 10)
+			{
+				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
+				temp = 0;
+			}
+		}
+		else if (tiles[car.j][car.i-1] == 22)
+			currentDirection = DIRECTION_RX.LEFT;
+		else if (tiles[car.j][car.i+1] == 22)
+			currentDirection = DIRECTION_RX.RIGHT;
+		else
+			currentDirection = DIRECTION_RX.DOWN;
+	}
+	
+	public void verifyBack(PlayerRallyX car)
+	{
+		if (tiles[car.j+1][car.i] == 22)
+		{
+			for(TileRallyX obj : tilesImg)
+				obj.y -= velocityMapMove;
+			
+			temp++;
+			
+			if (temp >= 10)
+			{
+				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
+				temp = 0;
+			}
+		}
+		else if (tiles[car.j][car.i-1] == 22)
+			currentDirection = DIRECTION_RX.LEFT;
+		else if (tiles[car.j][car.i+1] == 22)
+			currentDirection = DIRECTION_RX.RIGHT;
+		else
+			currentDirection = DIRECTION_RX.UP;
+	}
+	
+	public void verifyLeft(PlayerRallyX car)
+	{
+		if (tiles[car.j][car.i-1] == 22)
+		{
+			for(TileRallyX obj : tilesImg)
+				obj.x += velocityMapMove;
+			
+			temp++;
+			
+			if (temp >= 10)
+			{
+				carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
+				temp = 0;
+			}
+		}
+		else if (tiles[car.j-1][car.i] == 22)
+			currentDirection = DIRECTION_RX.UP;
+		else if (tiles[car.j+1][car.i] == 22)
+			currentDirection = DIRECTION_RX.DOWN;
+		else
+			currentDirection = DIRECTION_RX.RIGHT;
+	}
+	
+	public void verifyRight(PlayerRallyX car)
+	{
+		if (tiles[car.j][car.i+1] == 22)
+		{
+			for(TileRallyX obj : tilesImg)
+				obj.x -= velocityMapMove;
+
+			temp++;
+			
+			if (temp >= 10)
+			{
+				carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
+				temp = 0;
+			}
+		}
+		else if (tiles[car.j-1][car.i] == 22)
+			currentDirection = DIRECTION_RX.UP;
+		else if (tiles[car.j+1][car.i] == 22)
+			currentDirection = DIRECTION_RX.DOWN;
+		else
+			currentDirection = DIRECTION_RX.LEFT;
 	}
 	
 	public enum DIRECTION_RX
@@ -301,6 +526,7 @@ public class TileManagerRallyX
 		UP,
 		DOWN,
 		LEFT,
-		RIGHT;
+		RIGHT,
+		NONE
 	}
 }
