@@ -23,7 +23,7 @@ public class CloudManager {
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_SPACE) && countCreate >= 12)
 		{
 			countCreate = 0 ;
-			Cloud a = new Cloud((float)carPos.getX(), (float)carPos.getY(), 30, 30, "/ImagesRallyX/fumaça.png");
+			Cloud a = new Cloud((float)carPos.getX(), (float)carPos.getY(), 50, 50, "/ImagesRallyX/fumaça.png");
 			//Cloud a = new Cloud(400, 300, 30, 30, "/ImagesRallyX/fumaça.png");
 			listClouds.add(a);
 			System.out.println("nuvem");

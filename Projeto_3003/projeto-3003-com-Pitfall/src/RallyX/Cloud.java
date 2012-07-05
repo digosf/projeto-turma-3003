@@ -19,22 +19,22 @@ public class Cloud extends GameObjectRallyX{
 		{
 			CloudManager.DeleteCloud();
 		}
-		if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_UP))
+		if (TileManagerRallyX.currentDirection == TileManagerRallyX.DIRECTION_RX.UP)
 		{
 			y +=  TileManagerRallyX.velocityMapMove;
 		}
 		
-		if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN))
+		if (TileManagerRallyX.currentDirection == TileManagerRallyX.DIRECTION_RX.DOWN)
 		{
 			y -=  TileManagerRallyX.velocityMapMove;
 		}
 		
-		if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_LEFT))
+		if (TileManagerRallyX.currentDirection == TileManagerRallyX.DIRECTION_RX.LEFT)
 		{
 			x +=  TileManagerRallyX.velocityMapMove;
 		}
 		
-		if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_RIGHT))
+		if (TileManagerRallyX.currentDirection == TileManagerRallyX.DIRECTION_RX.RIGHT)
 		{
 			x -=  TileManagerRallyX.velocityMapMove;
 		}

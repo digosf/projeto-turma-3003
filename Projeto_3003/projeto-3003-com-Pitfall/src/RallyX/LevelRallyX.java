@@ -33,7 +33,7 @@ public class LevelRallyX extends SceneRallyX{
 	{
 		background.Draw(g2d);
 		map.Draw(g2d);
-		car.Draw(g2d);
 		clouds.draw(g2d);
+		car.Draw(g2d);
 	}
 }
