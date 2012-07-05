@@ -11,6 +11,7 @@ import java.util.LinkedList;
 public class TileManagerRallyX 
 {
 	public static DIRECTION_RX currentDirection;
+	public static DIRECTION_RX nextDirection;
 	
 	int [][] tiles = new int[][]
 	{
@@ -233,6 +234,8 @@ public class TileManagerRallyX
 			{
 				currentDirection = DIRECTION_RX.UP;
 			}
+			else
+				nextDirection = DIRECTION_RX.UP;
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_DOWN))
@@ -241,6 +244,8 @@ public class TileManagerRallyX
         	{
         		currentDirection = DIRECTION_RX.DOWN;
         	}
+        	else
+				nextDirection = DIRECTION_RX.DOWN;
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_LEFT))
@@ -249,6 +254,8 @@ public class TileManagerRallyX
         	{
         		currentDirection = DIRECTION_RX.LEFT;
         	}
+        	else
+				nextDirection = DIRECTION_RX.LEFT;
         }
         
         if (Keyboard.getInstance().isKeyPressed(KeyEvent.VK_RIGHT))
@@ -257,6 +264,8 @@ public class TileManagerRallyX
         	{
         		currentDirection = DIRECTION_RX.RIGHT;
         	}
+        	else
+				nextDirection = DIRECTION_RX.RIGHT;
         }
 	}
 	
@@ -527,6 +536,7 @@ public class TileManagerRallyX
 		DOWN,
 		LEFT,
 		RIGHT,
-		NONE
+		NONE,
+		NULL
 	}
 }
