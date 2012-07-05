@@ -20,7 +20,6 @@ public class Inimigo_Morcego extends AnimatedSprite
 	public void Update()
 	{
 		this.setPosition(new Point2D.Double(this.getPosition().getX(), this.getPosition().getY()));
-		System.out.println(this.getSize());
 		Animation();
 		super.Update();
 	}
