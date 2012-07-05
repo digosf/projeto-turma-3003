@@ -1,5 +1,6 @@
 package RallyX;
 
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 
 import game.Keyboard;
@@ -13,14 +14,12 @@ public class PlayerRallyX extends GameObjectRallyX
 		super(x, y, w, h, image);
 	}
 	
-	public void update(TileManagerRallyX map)
+	public void update()
 	{
 		
 		i = (int)TileManagerRallyX.carPosition.getX()/(int)TileManagerRallyX.sizeTile;
-
 		j = (int)TileManagerRallyX.carPosition.getY()/(int)TileManagerRallyX.sizeTile;
 		
-		System.out.println("i: " + i + " j: " + j);
-		//this.i = map.tilesImg[]
+		//System.out.println("i: " + i + " j: " + j);
 	}
 }
