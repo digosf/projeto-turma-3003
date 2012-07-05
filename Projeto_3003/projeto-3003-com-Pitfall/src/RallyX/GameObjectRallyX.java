@@ -20,7 +20,7 @@ public abstract class GameObjectRallyX {
 		
 		LoadImage(image);
 	}	
-		
+	
 	protected URL getURL(String filename)
 	{
 		URL url = null;

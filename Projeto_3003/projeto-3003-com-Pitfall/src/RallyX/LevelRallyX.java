@@ -9,7 +9,7 @@ public class LevelRallyX extends SceneRallyX{
 	TileManagerRallyX map;
 	public PlayerRallyX car;
 	
-	BackgroundRallyX background = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/tela_start.png");
+	BackgroundRallyX background = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/vermelho.png");
 	
 	public LevelRallyX()
 	{

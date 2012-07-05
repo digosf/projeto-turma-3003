@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 
 public class InstructionsRallyX extends SceneRallyX{
 
-	BackgroundRallyX back = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/tela_instrucao.png");
+	BackgroundRallyX back = new BackgroundRallyX(0, 0, 800, 600, "/ImagesRallyX/tela_instrucao2.png");
 	@Override
 	public void update() {
 		if(Keyboard.getInstance().isKeyPressed(KeyEvent.VK_ENTER))
