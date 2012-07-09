@@ -8,7 +8,7 @@ public class LevelRallyX extends SceneRallyX{
 	CloudManager clouds;
 	TileManagerRallyX map;
 	public PlayerRallyX car;
-	
+	EnemyManagerRallyX enemies;
 	BackgroundRallyX background;
 	
 	public LevelRallyX()
@@ -20,6 +20,7 @@ public class LevelRallyX extends SceneRallyX{
 				   "/ImagesRallyX/carro_amarelo.png");
 		
 		map = new TileManagerRallyX(car);
+		enemies = new EnemyManagerRallyX(map, 1);
 		clouds = new CloudManager(new Point2D.Double(car.x, car.y));
 	}
 	
@@ -30,6 +31,7 @@ public class LevelRallyX extends SceneRallyX{
 		
 		car.update();
 		map.update(car);
+		enemies.update(map);
 		clouds.Update();
 	}
 
@@ -40,5 +42,6 @@ public class LevelRallyX extends SceneRallyX{
 		map.Draw(g2d);
 		clouds.draw(g2d);
 		car.Draw(g2d);
+		enemies.draw(g2d);
 	}
 }
