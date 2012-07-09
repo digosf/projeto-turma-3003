@@ -20,6 +20,8 @@ public class PlayerRallyX extends GameObjectRallyX
 		super(x, y, w, h, imageUp, imageDown, imageLeft, imageRight);
 		image = carRight;
 		
+//		i = (int)x-650/(int)50;
+//		j = (int)y-2250/(int)50;
 	}
 	
 	public void update()
@@ -41,9 +43,14 @@ public class PlayerRallyX extends GameObjectRallyX
 			break;
 		}
 		
+		//System.out.println(" i: "+i+"    j: "+j);
+		
+		updateIJ();
+	}
+	
+	public void updateIJ()
+	{
 		i = (int)TileManagerRallyX.carPosition.getX()/(int)TileManagerRallyX.sizeTile;
 		j = (int)TileManagerRallyX.carPosition.getY()/(int)TileManagerRallyX.sizeTile;
-		
-		//System.out.println("i: " + i + " j: " + j);
 	}
 }

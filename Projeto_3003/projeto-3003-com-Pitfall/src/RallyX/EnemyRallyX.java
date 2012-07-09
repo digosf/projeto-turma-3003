@@ -11,7 +11,7 @@ public class EnemyRallyX extends GameObjectRallyX
 	}
 	
 	@Override
-	public void Update(TileManagerRallyX map)
+	public void Update()
 	{
 
 		super.Update();

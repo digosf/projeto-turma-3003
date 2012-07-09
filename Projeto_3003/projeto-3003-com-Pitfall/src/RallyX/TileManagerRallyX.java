@@ -1,5 +1,6 @@
 package RallyX;
 
+import game.Game;
 import game.Keyboard;
 
 import java.awt.Graphics2D;
@@ -94,6 +95,7 @@ public class TileManagerRallyX
 	public int temp;
 	
 	LinkedList<TileRallyX> tilesImg = new LinkedList<TileRallyX>();
+	private boolean startt = false;
 	
 	public TileManagerRallyX(PlayerRallyX car)
 	{
@@ -163,6 +165,7 @@ public class TileManagerRallyX
 					tilesImg.add(new TileRallyX(j*sizeTile, i*sizeTile, (int)sizeTile, (int)sizeTile, "/ImagesRallyX/Textura28.png", i, j));
 			}
 		}
+		setInitialTilemapPosition();
 	}
 	
 	public void update(PlayerRallyX car) 
@@ -188,14 +191,13 @@ public class TileManagerRallyX
 		}
 		
 		InputMap(car);
-		
-		System.out.println(
-				   "up: " + tiles[car.j-1][car.i] + 
-				   ", down: " + tiles[car.j+1][car.i] +
-				   ", left: " + tiles[car.j][car.i-1] +
-				   ", right: " + tiles[car.j][car.i+1] +
-				   "    current: " + tiles[car.j][car.i] +
-				   "    nextDirection: " + nextDirection);
+//		System.out.println(
+//				   "up: " + tiles[car.j-1][car.i] + 
+//				   ", down: " + tiles[car.j+1][car.i] +
+//				   ", left: " + tiles[car.j][car.i-1] +
+//				   ", right: " + tiles[car.j][car.i+1] +
+//				   "    current: " + tiles[car.j][car.i] +
+//				   "    nextDirection: " + nextDirection);
 	}
 	
 	public void Draw(Graphics2D g2d) 
@@ -354,6 +356,7 @@ public class TileManagerRallyX
 	
 	public void verifyRight(PlayerRallyX car)
 	{
+//		System.out.println(car.j + "    " +car.i+1);
 		if (tiles[car.j][car.i+1] == 22)
 		{
 			for(TileRallyX obj : tilesImg)
@@ -375,6 +378,20 @@ public class TileManagerRallyX
 			currentDirection = DIRECTION_RX.DOWN;
 		else
 			currentDirection = DIRECTION_RX.LEFT;
+	}
+	
+	public void setInitialTilemapPosition()
+	{
+		int tempx = 650;
+		int tempy = 2250;
+		
+		for(TileRallyX obj : tilesImg)
+		{
+			obj.x -= tempx;
+			obj.y -= tempy;
+		}
+		
+		carPosition = new Point2D.Double(carPosition.getX() + tempx, carPosition.getY() + tempy);	
 	}
 	
 	public enum DIRECTION_RX
