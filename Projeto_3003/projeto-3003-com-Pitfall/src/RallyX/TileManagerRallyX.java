@@ -186,7 +186,9 @@ public class TileManagerRallyX
 				MoveMap(car);
 				break;			
 		}
+		
 		InputMap(car);
+		
 		System.out.println(
 				   "up: " + tiles[car.j-1][car.i] + 
 				   ", down: " + tiles[car.j+1][car.i] +
@@ -267,6 +269,14 @@ public class TileManagerRallyX
         }
 	}
 	
+	public void reVerify()
+	{
+		if (nextDirection != DIRECTION_RX.NULL && nextDirection != DIRECTION_RX.NONE)
+		{
+			currentDirection = nextDirection;
+		}
+	}
+	
 	public void verifyFront(PlayerRallyX car)
 	{
 		if (tiles[car.j-1][car.i] == 22)
@@ -280,6 +290,7 @@ public class TileManagerRallyX
 			{
 				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()- velocityMapMove*temp);
 				temp = 0;
+				reVerify();
 				nextDirection = DIRECTION_RX.NULL;
 			}
 		}
@@ -304,6 +315,8 @@ public class TileManagerRallyX
 			{
 				carPosition = new Point2D.Double(carPosition.getX() , carPosition.getY()+ velocityMapMove*temp);
 				temp = 0;
+				reVerify();
+				nextDirection = DIRECTION_RX.NULL;
 			}
 		}
 		else if (tiles[car.j][car.i-1] == 22)
@@ -327,6 +340,8 @@ public class TileManagerRallyX
 			{
 				carPosition = new Point2D.Double(carPosition.getX() - velocityMapMove*temp, carPosition.getY());
 				temp = 0;
+				reVerify();
+				nextDirection = DIRECTION_RX.NULL;
 			}
 		}
 		else if (tiles[car.j-1][car.i] == 22)
@@ -350,6 +365,8 @@ public class TileManagerRallyX
 			{
 				carPosition = new Point2D.Double(carPosition.getX() + velocityMapMove*temp, carPosition.getY());
 				temp = 0;
+				reVerify();
+				nextDirection = DIRECTION_RX.NULL;
 			}
 		}
 		else if (tiles[car.j-1][car.i] == 22)
