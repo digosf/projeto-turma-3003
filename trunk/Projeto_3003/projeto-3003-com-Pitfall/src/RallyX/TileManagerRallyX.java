@@ -84,10 +84,7 @@ public class TileManagerRallyX
 	static int velocityMapMove;
 	
 	static Point2D carPosition;
-	
-	int iCar;
-	int jCar;
-	
+		
 	static Point2D mapPosition = new Point2D.Double(0,0);
 	
 	static float sizeTile = 50;
@@ -173,19 +170,15 @@ public class TileManagerRallyX
 		switch (currentDirection)
 		{
 			case UP:
-				//System.out.println("UP");
 				MoveMap(car);
 				break;
 			case DOWN:
-				//System.out.println("DOWN");
 				MoveMap(car);
 				break;
 			case LEFT:
-				//System.out.println("LEFT");
 				MoveMap(car);
 				break;
 			case RIGHT:
-				//System.out.println("RIGHT");
 				MoveMap(car);
 				break;			
 		}
@@ -382,8 +375,8 @@ public class TileManagerRallyX
 	
 	public void setInitialTilemapPosition()
 	{
-		int tempx = 650;
-		int tempy = 2250;
+		int tempx = 13*50;
+		int tempy = 45*50;
 		
 		for(TileRallyX obj : tilesImg)
 		{
