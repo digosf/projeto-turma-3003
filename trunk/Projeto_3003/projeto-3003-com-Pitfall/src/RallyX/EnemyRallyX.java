@@ -1,5 +1,8 @@
 package RallyX;
 
+import game.Game;
+import game.Time;
+
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 
@@ -10,19 +13,26 @@ public class EnemyRallyX extends GameObjectRallyX
 	int i;
 	int j;
 	
+	static Point2D position;
+	
 	public DIRECTION_ENEMY currentDirection;
 	private int temp;
+	private float velocity;
 	
 	public EnemyRallyX(float x, float y, int w, int h, String image)
 	{
 		super(x, y, w, h, image);
 		currentDirection = DIRECTION_ENEMY.RIGHT;
 		
+		velocity = 5;
+		
 		int tempx = 13*50;
 		int tempy = 45*50;
+
+//		x+=tempx;
+//		y+=tempy;
 		
-		x+=tempx;
-		y+=tempy;
+		position = new Point2D.Double(this.x+tempx, this.y+tempy);
 	}
 	
 	public void update(TileManagerRallyX map)
@@ -35,27 +45,30 @@ public class EnemyRallyX extends GameObjectRallyX
 			verifyFront(map);
 			break;
 		case DOWN:
+			verifyBack(map);
 			break;
 		case LEFT:
+			verifyLeft(map);
 			break;
 		case RIGHT:
 			verifyRight(map);
 			break;
 		}
-		System.out.println("enemy i: " + i + "  j: " +j);
+		//System.out.println("enemy i: " + i + "  j: " +j);
 	}
 	
 	public void verifyFront(TileManagerRallyX map)
 	{
 		if (map.tiles[j-1][i] == 22)
 		{
+			this.y-=velocity;
+			
 			temp++;
-			y+=5;
+			
 			if (temp >= 10)
 			{
+				position = new Point2D.Double(position.getX() , position.getY()- velocity*temp);
 				temp = 0;
-//				reVerify();
-//				nextDirection = DIRECTION_RX.NULL;
 			}
 		}
 		else if (map.tiles[j][i-1] == 22)
@@ -66,17 +79,40 @@ public class EnemyRallyX extends GameObjectRallyX
 			currentDirection = DIRECTION_ENEMY.DOWN;
 	}
 	
-	public void verifyRight(TileManagerRallyX map)
+	public void verifyBack(TileManagerRallyX map)
 	{
-//		System.out.println(car.j + "    " +car.i+1);
-		if (map.tiles[j][i+1] == 22)
+		if (map.tiles[j+1][i] == 22)
 		{
+			this.y+=5;
+			
 			temp++;
-			x+=5;
+			
 			if (temp >= 10)
 			{
-//				reVerify();
-//				nextDirection = DIRECTION_RX.NULL;
+				position = new Point2D.Double(position.getX() , position.getY()+ velocity*temp);
+				temp = 0;
+			}
+		}
+		else if (map.tiles[j][i-1] == 22)
+			currentDirection = DIRECTION_ENEMY.LEFT;
+		else if (map.tiles[j][i+1] == 22)
+			currentDirection = DIRECTION_ENEMY.RIGHT;
+		else
+			currentDirection = DIRECTION_ENEMY.UP;
+	}
+	
+	public void verifyRight(TileManagerRallyX map)
+	{
+		if (map.tiles[j][i+1] == 22)
+		{
+			this.x+=5;
+			
+			temp++;
+			
+			if (temp >= 10)
+			{
+				position = new Point2D.Double(position.getX()+ velocity*temp , position.getY());
+				temp = 0;
 			}
 		}
 		else if (map.tiles[j-1][i] == 22)
@@ -91,13 +127,14 @@ public class EnemyRallyX extends GameObjectRallyX
 	{
 		if (map.tiles[j][i-1] == 22)
 		{
+			this.x-=5;
+			
 			temp++;
-			x-=5;
+			
 			if (temp >= 10)
 			{
+				position = new Point2D.Double(position.getX()- velocity*temp , position.getY());
 				temp = 0;
-//				reVerify();
-//				nextDirection = DIRECTION_RX.NULL;
 			}
 		}
 		else if (map.tiles[j-1][i] == 22)
@@ -110,8 +147,10 @@ public class EnemyRallyX extends GameObjectRallyX
 	
 	public void updateIJ()
 	{
-		i = (int)this.x/(int)TileManagerRallyX.sizeTile;
-		j = (int)this.y/(int)TileManagerRallyX.sizeTile;
+//		i = (int)this.x/(int)TileManagerRallyX.sizeTile;
+//		j = (int)this.y/(int)TileManagerRallyX.sizeTile;
+		i = (int)this.position.getX()/(int)TileManagerRallyX.sizeTile;
+		j = (int)this.position.getY()/(int)TileManagerRallyX.sizeTile;
 	}
 	
 	@Override

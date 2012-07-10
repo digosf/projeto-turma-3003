@@ -1,6 +1,8 @@
 package RallyX;
 
 
+import game.Time;
+
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 
@@ -10,6 +12,8 @@ public class LevelRallyX extends SceneRallyX{
 	public PlayerRallyX car;
 	EnemyManagerRallyX enemies;
 	BackgroundRallyX background;
+	
+	int test;
 	
 	public LevelRallyX()
 	{
@@ -28,6 +32,8 @@ public class LevelRallyX extends SceneRallyX{
 	public void update() 
 	{
 		//System.out.println("Game");
+		
+		//System.out.println("fps: " + Time.getLoopTime());
 		
 		car.update();
 		map.update(car);
