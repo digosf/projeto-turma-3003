@@ -19,7 +19,7 @@ public class Game extends Applet implements Runnable
 	BufferedImage backbuffer;
 	Graphics2D g2d;
 	Thread gameLoop;
-	static Game instance;
+	public static Game instance;
 	
 	
 	
