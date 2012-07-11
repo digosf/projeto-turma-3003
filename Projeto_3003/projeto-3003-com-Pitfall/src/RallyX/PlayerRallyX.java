@@ -52,6 +52,6 @@ public class PlayerRallyX extends GameObjectRallyX
 	{
 		i = (int)TileManagerRallyX.carPosition.getX()/(int)TileManagerRallyX.sizeTile;
 		j = (int)TileManagerRallyX.carPosition.getY()/(int)TileManagerRallyX.sizeTile;
-		System.out.println("car i: " + i + "  j: " +j);
+//		System.out.println("car i: " + i + "  j: " +j);
 	}
 }
