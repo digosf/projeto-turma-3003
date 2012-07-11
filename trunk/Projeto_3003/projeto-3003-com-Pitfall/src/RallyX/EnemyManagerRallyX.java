@@ -23,6 +23,8 @@ public class EnemyManagerRallyX
 		{
 			obj.update(map);
 			
+//			obj.x /= map.mapPosition.getX();
+//			obj.y /= map.mapPosition.getY();
 			switch (TileManagerRallyX.currentDirection)
 			{
 				case UP:
