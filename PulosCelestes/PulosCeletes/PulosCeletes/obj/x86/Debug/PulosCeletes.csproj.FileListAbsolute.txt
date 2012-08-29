@@ -1,0 +1,65 @@
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\claudius.xnb
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Jump.xnb
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\claudius.xnb
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Jump.xnb
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.pdb
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\claudius.xnb
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Jump.xnb
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.exe
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.pdb
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.exe
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.pdb
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\claudius.xnb
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Jump.xnb
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.exe
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.pdb
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.exe
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\claudius.xnb
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Jump.xnb
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\claudius.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Jump.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\FundoCreditos.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\FundoInstrucao.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\FundoMenu.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\FundoRanking.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\Instruções.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\InstruçõesUp.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\Novo Jogo.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\Novo JogoUp.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\Ranking.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\RankingUp.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\Sair.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\SairUp.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\Voltar.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\VoltarUp.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.exe
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\obj\x86\Debug\PulosCeletes.pdb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\BlocoPlataforma.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\empresa.xnb
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletes\bin\x86\Debug\Content\Images\FundoGame.xnb

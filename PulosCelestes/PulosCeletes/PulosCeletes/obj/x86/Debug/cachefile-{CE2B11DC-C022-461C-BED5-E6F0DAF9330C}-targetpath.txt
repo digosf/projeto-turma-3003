@@ -1,0 +1,19 @@
+Content\claudius.xnb
+Content\Jump.xnb
+Content\Images\FundoCreditos.xnb
+Content\Images\FundoInstrucao.xnb
+Content\Images\FundoMenu.xnb
+Content\Images\FundoRanking.xnb
+Content\Images\Instruções.xnb
+Content\Images\InstruçõesUp.xnb
+Content\Images\Novo Jogo.xnb
+Content\Images\Novo JogoUp.xnb
+Content\Images\Ranking.xnb
+Content\Images\RankingUp.xnb
+Content\Images\Sair.xnb
+Content\Images\SairUp.xnb
+Content\Images\Voltar.xnb
+Content\Images\VoltarUp.xnb
+Content\BlocoPlataforma.xnb
+Content\Images\empresa.xnb
+Content\Images\FundoGame.xnb
