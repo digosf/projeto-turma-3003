@@ -23,6 +23,11 @@ namespace PulosCeletes
                 Count = 0;
                 PlataformManager.CreatePlataforms(Game);
             }
+            if (player.Position.Y > 700)
+            {
+                SceneManager.ChangeScene(Game);
+                SceneManager.gameOver = true;
+            }
             base.Update(gameTime);
         }
         public override void Draw(GameTime gameTime)

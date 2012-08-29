@@ -42,6 +42,9 @@ namespace PulosCeletes
         }
         static public void CreatePlataforms(Game game)
         {
+            Vector2 pos;
+          
+
             Plataform plat = new Plataform(new Vector2(rand.Next(750), -30), game.Content.Load<Texture2D>("BlocoPlataforma"),Vector2.One, Speed);
             listPlat.Add(plat);
         }

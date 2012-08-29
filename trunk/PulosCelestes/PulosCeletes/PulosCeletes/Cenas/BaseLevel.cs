@@ -23,12 +23,12 @@ namespace PulosCeletes
         }
         public override void Update(GameTime gameTime)
         {
+            player.Update(Game.Window.ClientBounds);
             PlataformManager.Update(Game.Window.ClientBounds);
             back.Update(Game.Window.ClientBounds);
-            player.Update(Game.Window.ClientBounds);
             foreach (Plataform a in PlataformManager.listPlat)
             {
-                if (player.Collision(a) && player.Position.Y + player.Rectangle.Height >= a.Position.Y && player.Position.Y + player.Rectangle.Height <= a.Position.Y + 6)
+                if (player.Collision(a) && player.Position.Y + player.Rectangle.Height >= a.Position.Y && player.Position.Y + player.Rectangle.Height <= a.Position.Y + 5)
                 {
                     a.Colidiu = true;
                     float p = player.Position.X;
@@ -38,7 +38,6 @@ namespace PulosCeletes
                         player.pular = true;
                         player.Pulo();
                     }
-
                     if (a.pontoDado == false)
                     {
                         a.pontoDado = true;
