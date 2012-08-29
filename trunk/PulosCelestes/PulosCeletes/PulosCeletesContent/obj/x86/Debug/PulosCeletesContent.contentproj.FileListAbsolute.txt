@@ -1,0 +1,6 @@
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCeletes\PulosCeletes\PulosCeletesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\INV\Desktop\Documents\Visual Studio 2010\Projects\PulosCelestes\PulosCeletes\PulosCeletesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Arquivos-PulosCelestes\PulosCelestes_Atualizado\PulosCeletes\PulosCeletesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\INV\Desktop\PulosCelestes_Atualizado\PulosCeletes\PulosCeletesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\INV\Desktop\PulosCelestes\PulosCeletes\PulosCeletesContent\obj\x86\Debug\ResolveAssemblyReference.cache
