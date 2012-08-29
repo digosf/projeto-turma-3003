@@ -69,7 +69,7 @@ namespace PulosCeletes
                     scene = new Menu(game);
                     break;
                 case Scenes.LEVEL01:
-                    if (gameOver == false)
+                    if (!gameOver)
                     {
                         SceneManager.scene = new Level02(game);
                         SceneManager.currentScene = Scenes.LEVEL02;
@@ -80,7 +80,12 @@ namespace PulosCeletes
                         SceneManager.scene = new GameOver(game);
                         SceneManager.currentScene = Scenes.GAMEOVER;
                         break;
-                    } 
+                    }
+                case Scenes.LEVEL02:
+                     SceneManager.scene = new GameOver(game);
+                     SceneManager.currentScene = Scenes.GAMEOVER;
+                     break;
+                    
                 case Scenes.GAMEOVER:
                     SceneManager.scene = new Menu(game);
                     SceneManager.currentScene = Scenes.MENU;

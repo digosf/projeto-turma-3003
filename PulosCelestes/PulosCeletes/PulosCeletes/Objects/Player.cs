@@ -12,7 +12,7 @@ namespace PulosCeletes
     {
         public int Speed = 5;
         public float speedY = 5;
-        float hPulo = 10;
+        float hPulo = 7;
         public bool pular = false;        
         public Player(Vector2 position, Texture2D texture, Vector2 numeroFrames)
             :base(position, texture, numeroFrames)
@@ -84,10 +84,7 @@ namespace PulosCeletes
                 }
             }
             Pulo();
-            if (Position.Y > 700)
-            {
-                Position.Y = -10;
-            }
+            
             base.Update(clientBounds);
         }
         public void Pulo()

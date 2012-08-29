@@ -32,14 +32,14 @@ namespace PulosCeletes
                         player.pular = true;
                         player.Pulo();
                     }
-                    
+
                     if (a.pontoDado == false)
                     {
                         a.pontoDado = true;
                     }
                 }
-          //  Console.WriteLine("4444    " + listPlat[i].Rectangle);
             }
+            
         }
         public void Draw1(SpriteBatch s)
         {
